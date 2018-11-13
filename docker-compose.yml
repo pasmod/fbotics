@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+
+  fbotics:
+    image: aibotics/fbotics:newest
+    command: tail -f /dev/null
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
