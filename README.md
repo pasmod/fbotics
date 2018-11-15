@@ -26,17 +26,5 @@ client.send_text_message(recipient_id="1198828066838820", text="hello world!")
 Test without coverage:
 
 ```
-$ docker-compose run fbotics python manage.py test
-```
-
-Test with coverage:
-
-```
-$ docker-compose run fbotics python manage.py cov
-```
-
-Lint:
-
-```
-$ docker-compose run fbotics flake8 project
+$ docker-compose run fbotics python -m pytest fbotics/tests/functional
 ```
