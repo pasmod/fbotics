@@ -22,4 +22,4 @@ class Client(object):
             API_URL,
             params=params,
             json=request.to_primitive())
-        return response.content
+        return response
