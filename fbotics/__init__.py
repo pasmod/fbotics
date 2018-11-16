@@ -1,9 +1,11 @@
 import requests
+
 from fbotics.models.message import Message
 from fbotics.models.recipient import Recipient
 from fbotics.models.request import Request
 
 API_URL = "https://graph.facebook.com/v2.6/me/messages"
+
 
 class OAuthException(Exception):
     pass

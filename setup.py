@@ -3,10 +3,8 @@
 
 import io
 import os
-import sys
-from shutil import rmtree
 
-from setuptools import find_packages, setup, Command
+from setuptools import find_packages, setup
 
 # Package meta-data.
 NAME = 'fbotics'
@@ -19,7 +17,7 @@ VERSION = '0.0.1'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-        'schematics==2.1.0'
+    'schematics==2.1.0'
 ]
 
 # What packages are optional?
@@ -47,10 +45,9 @@ except FileNotFoundError:
 about = {}
 if not VERSION:
     with open(os.path.join(here, NAME, '__version__.py')) as f:
-        exec(f.read(), about)
+        exec (f.read(), about)
 else:
     about['__version__'] = VERSION
-
 
 # Where the magic happens:
 setup(
