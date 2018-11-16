@@ -1,9 +1,22 @@
-def test_root_route(client):
+import pytest
+from fbotics import OAuthException
+
+
+def test_status_code_when_sending_text_message_to_valid_recipient(client, recipient_id):
     """
-    GIVEN a flask application
-    WHEN the '/' route is requested
-    THEN check that the response is valid
+    GIVEN a client and a recipient id
+    WHEN a text message is sent to the recipient
+    THEN the status code of the response is 200
     """
-    recipient_id = "2157136727638083"
     response = client.send_text_message(recipient_id=recipient_id, text="foo")
     assert response.status_code == 200
+
+def test_status_code_when_sending_text_message_to_invalid_recipient(client, recipient_id):
+    """
+    GIVEN a client and a recipient id
+    WHEN a text message is sent to the recipient
+    THEN the status code of the response is 200
+    """
+    invalid_recipient_id = 1234
+    with pytest.raises(OAuthException) as e_info:
+        client.send_text_message(recipient_id=1234, text="foo")
