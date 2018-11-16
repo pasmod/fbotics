@@ -26,7 +26,7 @@ down:
 .PHONY: test
 # target: test – execute the tests
 test:
-	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest -v fbotics/tests/functional
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest -vv fbotics/tests/functional
 
 .PHONY: clean
 # target: clean – clean the project's directory
