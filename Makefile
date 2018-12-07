@@ -28,12 +28,20 @@ down:
 test:
 	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest -vv fbotics/tests/functional
 
+.PHONY: upload
+# target: upload – upload the package to Python package index
+upload:
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python setup.py sdist bdist_wheel & twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
 .PHONY: clean
 # target: clean – clean the project's directory
 clean:
 	@find . \
 		-name *.py[cod] -exec rm -fv {} + -o \
 		-name __pycache__ -exec rm -rfv {} +
+	rm -rf build/
+	rm -rf dist/
+	rm -rf fbotics.egg-info
 
 .PHONY: help
 # target: help – display all callable targets

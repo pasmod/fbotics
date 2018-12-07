@@ -8,3 +8,6 @@ flake8==3.5.0
 
 # Documentation
 mkdocs==1.0.4
+
+# Packaging
+twine==1.12.1
