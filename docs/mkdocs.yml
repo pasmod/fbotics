@@ -2,6 +2,7 @@ site_name: FBotics Documentation
 theme: readthedocs
 site_description: 'Documentation for FBotics, the Python Client for Facebook Send API'
 docs_dir: sources
+site_url: https://pasmod.github.io/fbotics/
 
 
 dev_addr: '0.0.0.0:8000'
