@@ -33,6 +33,16 @@ test:
 upload:
 	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python setup.py sdist bdist_wheel & twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
+.PHONY: doc
+# target: doc – generate documentation and start local server
+doc:
+	LOCAL_USER_ID=$(USER_ID) docker-compose run -p 8082:8000 -w /usr/src/app/docs fbotics bash -c "python autogen.py & sleep 5 & mkdocs serve -f /usr/src/app/docs/mkdocs.yml"
+
+.PHONY: upload_doc
+# target: upload_doc – upload the documentation to GitHub Pages
+upload_doc:
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics mkdocs gh-deploy -f docs/mkdocs.yml
+
 .PHONY: clean
 # target: clean – clean the project's directory
 clean:
