@@ -3,6 +3,10 @@ import requests
 from fbotics.models.message import Message
 from fbotics.models.recipient import Recipient
 from fbotics.models.request import Request
+from ._version import get_versions
+
+__version__ = get_versions()['version']
+del get_versions
 
 API_URL = "https://graph.facebook.com/v2.6/me/messages"
 

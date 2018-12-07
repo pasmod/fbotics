@@ -6,6 +6,8 @@ import os
 
 from setuptools import find_packages, setup
 
+import versioneer
+
 # Package meta-data.
 NAME = 'fbotics'
 DESCRIPTION = 'Client for Facebook Send API'
@@ -52,7 +54,7 @@ else:
 # Where the magic happens:
 setup(
     name=NAME,
-    version=about['__version__'],
+    version=versioneer.get_version(),
     description=DESCRIPTION,
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -72,5 +74,6 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy'
-    ]
+    ],
+    cmdclass={'versioneer': versioneer.get_cmdclass()}
 )
