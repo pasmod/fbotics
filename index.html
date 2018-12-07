@@ -57,11 +57,13 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#quick-start">Quick Start</a></li>
+            <li><a class="toctree-l3" href="#overview">Overview</a></li>
         
-            <li><a class="toctree-l3" href="#demo">Demo</a></li>
+            <li><a class="toctree-l3" href="#getting-started-30-seconds-to-fbotics">Getting started: 30 seconds to FBotics</a></li>
         
-            <li><a class="toctree-l3" href="#testing">Testing</a></li>
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#development-testing">Development &amp; Testing</a></li>
         
         </ul>
     
@@ -107,16 +109,13 @@
             <div class="section">
               
                 <h1 id="fbotics-the-python-client-for-facebook-send-api">FBotics: The Python Client for Facebook Send API</h1>
-<h4 id="quick-start">Quick Start</h4>
-<p>Build the project and install dependencies</p>
-<pre><code>make build
-</code></pre>
-
-<p>Run the stack locally</p>
-<pre><code>make up
-</code></pre>
-
-<h4 id="demo">Demo</h4>
+<h2 id="overview">Overview</h2>
+<hr />
+<p>FBotics is a Python client for Facebook Send API. The goal of this project is to privide a clean and professional
+client, which can be used in production environments. For this, each new functionality added will be fully tested and
+documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.</p>
+<h2 id="getting-started-30-seconds-to-fbotics">Getting started: 30 seconds to FBotics</h2>
+<hr />
 <p>This is an example of sending a text message to a user</p>
 <pre><code>from fbotics import Client
 client = Client(page_access_token=&quot;EAAQQHQvZAn7wBAHju9UsxuqWWcUreBozSf2zePcRZBZAjNoaQdxK4o93U9UwGLPYIgy4ZABwkjH5ZBOm4L3aX1x0x4jLtXt8ZAxe3j9qYLpKWeYA2QfMTFt4lVBNB8QjlY0IlgX92yl6SMxH4uKO1QMCJHHYKZBJy9BqZAEJxApMkAZDZD&quot;)
@@ -124,9 +123,33 @@ client.send_text_message(recipient_id=&quot;1198828066838820&quot;, text=&quot;h
 
 </code></pre>
 
-<h4 id="testing">Testing</h4>
-<p>Test without coverage:</p>
-<pre><code>$ docker-compose run fbotics python -m pytest fbotics/tests/functional
+<h2 id="installation">Installation</h2>
+<hr />
+<p>You can install FBotics from GitHub source:</p>
+<p>First, clone FBotics using <code>git</code>:</p>
+<pre><code class="sh">git clone git@github.com:pasmod/fbotics.git
+</code></pre>
+
+<p>Then, <code>cd</code> to the project folder and run the install command:</p>
+<pre><code class="sh">cd fbotics
+pip install .
+</code></pre>
+
+<h2 id="development-testing">Development &amp; Testing</h2>
+<hr />
+<p>Before developing FBotics further, please install Docker. For building the Docker image and installing all dependencies
+of FBotics, run:</p>
+<pre><code class="sh">cd fbotics
+make build
+</code></pre>
+
+<p>Then execute the following command to run all the components required to work on FBotics:</p>
+<pre><code class="sh">cd fbotics
+make up
+</code></pre>
+
+<p>To execute the tests:</p>
+<pre><code class="sh">make test
 </code></pre>
               
             </div>
@@ -176,5 +199,5 @@ client.send_text_message(recipient_id=&quot;1198828066838820&quot;, text=&quot;h
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-12-07 15:53:14
+Build Date UTC : 2018-12-07 16:02:57
 -->
