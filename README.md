@@ -1,5 +1,8 @@
 # FBotics: Python Client for Facebook Send API
 
+Read the documentation at [Fbotics.io](https://pasmod.github.io/fbotics/).
+
+
 ## Overview
 ------------------
 
