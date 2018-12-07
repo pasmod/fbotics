@@ -12,3 +12,6 @@ RUN pip install -r requirements.txt --ignore-installed
 
 # add app
 COPY . /usr/src/app
+
+# Make fbotics importable
+ENV PYTHONPATH /usr/src/app
