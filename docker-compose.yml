@@ -5,6 +5,8 @@ services:
   fbotics:
     image: aibotics/fbotics:newest
     command: tail -f /dev/null
+    ports:
+        - 8082:8000
     build:
       context: ./
       dockerfile: Dockerfile

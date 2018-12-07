@@ -1,0 +1,11 @@
+site_name: FBotics Documentation
+theme: readthedocs
+site_description: 'Documentation for FBotics, the Python Client for Facebook Send API'
+docs_dir: sources
+
+
+dev_addr: '0.0.0.0:8000'
+
+nav:
+- Home: index.md
+- Send API: fbotics.md
