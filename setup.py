@@ -10,7 +10,7 @@ from setuptools import find_packages, setup
 NAME = 'fbotics'
 DESCRIPTION = 'Client for Facebook Send API'
 URL = 'https://github.com/pasmod/fbotics'
-EMAIL = 'info@aibotics.de'
+EMAIL = 'developer@aibotics.de'
 AUTHOR = 'AiBotics'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.0.1'
