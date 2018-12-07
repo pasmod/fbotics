@@ -31,12 +31,12 @@ test:
 .PHONY: upload_testpypi
 # target: upload_testpypi – upload the package to Test Python package index
 upload_testpypi:
-	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python setup.py sdist bdist_wheel & twine upload --config-file .pypirc -r testpypi dist/*
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python setup.py sdist bdist_wheel & twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 .PHONY: upload_pypi
 # target: upload_pypi – upload the package to Python package index
 upload_pypi:
-	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python setup.py sdist bdist_wheel & twine upload --config-file .pypirc -r pypi dist/*
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python setup.py sdist bdist_wheel & twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 
 .PHONY: doc
 # target: doc – generate documentation and start local server
