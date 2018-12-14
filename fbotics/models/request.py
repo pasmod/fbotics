@@ -1,12 +1,12 @@
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types.compound import ModelType
+from schematics.exceptions import ValidationError
 
 from fbotics.models.message import Message
 from fbotics.models.recipient import Recipient
 
 
-# TODO: Add missing fields and constraints
 class Request(Model):
     messaging_type = StringType(
         required=True,
@@ -37,3 +37,9 @@ class Request(Model):
             "TICKET_UPDATE"])
     recipient = ModelType(Recipient)
     message = ModelType(Message)
+
+    def validate_messaging_type(self, data, value):
+        if data["tag"] and data["messaging_type"] != "MESSAGE_TAG":
+            raise ValidationError(
+                "Messaging type should be MESSAGE_TAG for tagged messages")
+        return value
