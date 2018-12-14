@@ -135,7 +135,8 @@ def process_list_block(docstring, starting_point, section_end,
     block = docstring[starting_point:(None if ending_point == -1 else
                                       ending_point - 1)]
     # Place marker for later reinjection.
-    docstring_slice = docstring[starting_point:section_end].replace(block, marker)
+    docstring_slice = docstring[starting_point:section_end].replace(
+        block, marker)
     docstring = (docstring[:starting_point]
                  + docstring_slice
                  + docstring[section_end:])
@@ -146,7 +147,8 @@ def process_list_block(docstring, starting_point, section_end,
     # These have to be removed, but first the list roots have to be detected.
     top_level_regex = r'^    ([^\s\\\(]+):(.*)'
     top_level_replacement = r'- __\1__:\2'
-    lines = [re.sub(top_level_regex, top_level_replacement, line) for line in lines]
+    lines = [re.sub(top_level_regex, top_level_replacement, line)
+             for line in lines]
     # All the other lines get simply the 4 leading space (if present) removed
     lines = [re.sub(r'^    ', '', line) for line in lines]
     # Fix text lines after lists
