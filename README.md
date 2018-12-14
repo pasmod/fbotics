@@ -6,7 +6,8 @@ Read the documentation at [Fbotics.io](https://pasmod.github.io/fbotics/).
 ## Overview
 ------------------
 
-FBotics is a Python client for Facebook Send API. The goal of this project is to privide a clean and professional
+FBotics is a Python client for Facebook Send API. The Send API is the main API used to send messages to users, including text,
+attachments, structured message templates, sender actions, and more. The goal of this project is to privide a clean and professional
 client, which can be used in production environments. For this, each new functionality added will be fully tested and
 documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.
 
