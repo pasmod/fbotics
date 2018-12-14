@@ -28,6 +28,11 @@ down:
 test:
 	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest -vv fbotics/tests
 
+.PHONY: coverage
+# target: coverage – execute the coverage
+coverage:
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest --cov=fbotics fbotics/tests/
+
 .PHONY: upload_testpypi
 # target: upload_testpypi – upload the package to Test Python package index
 upload_testpypi: clean
