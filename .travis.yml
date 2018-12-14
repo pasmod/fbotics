@@ -2,13 +2,16 @@ sudo: required
 
 language: python
 
+python:
+    - "3.6"
+
 services:
-  - docker
+    - docker
 
 script:
-- make build
-- make test
+    - make build
+    - make test
 
 after_success:
-  - make coverage
-  - codecov
+    - python -m pytest --cov=fbotics fbotics/tests/
+    - codecov
