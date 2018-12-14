@@ -32,6 +32,15 @@ class Client(object):
             params=params,
             json=request.to_primitive())
         json_response = response.json()
-        if response.status_code == 400 and json_response.get("error", {}).get("type", "") == "OAuthException":
+        if response.status_code == 400 and json_response.get(
+                "error", {}).get("type", "") == "OAuthException":
             raise OAuthException(json_response.get("error").get("message", ""))
+        return response
+
+    def retrieve_supported_tags(self):
+        URL = "https://graph.facebook.com/v2.6/page_message_tags"
+        params = {'access_token': self.page_access_token}
+        response = requests.get(
+            URL,
+            params=params)
         return response
