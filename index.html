@@ -59,7 +59,7 @@
         
             <li><a class="toctree-l3" href="#overview">Overview</a></li>
         
-            <li><a class="toctree-l3" href="#getting-started-30-seconds-to-fbotics">Getting started: 30 seconds to FBotics</a></li>
+            <li><a class="toctree-l3" href="#getting-started">Getting started</a></li>
         
             <li><a class="toctree-l3" href="#installation">Installation</a></li>
         
@@ -111,16 +111,16 @@
                 <h1 id="fbotics-the-python-client-for-facebook-send-api">FBotics: The Python Client for Facebook Send API</h1>
 <h2 id="overview">Overview</h2>
 <hr />
-<p>FBotics is a Python client for Facebook Send API. The goal of this project is to privide a clean and professional
+<p>FBotics is a Python client for Facebook Send API. The Send API is the main API used to send messages to users, including text,
+attachments, structured message templates, sender actions, and more. The goal of this project is to privide a clean and professional
 client, which can be used in production environments. For this, each new functionality added will be fully tested and
 documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.</p>
-<h2 id="getting-started-30-seconds-to-fbotics">Getting started: 30 seconds to FBotics</h2>
+<h2 id="getting-started">Getting started</h2>
 <hr />
-<p>This is an example of sending a text message to a user</p>
+<p>Send a Text Message</p>
 <pre><code>from fbotics import Client
 client = Client(page_access_token=&quot;EAAQQHQvZAn7wBAHju9UsxuqWWcUreBozSf2zePcRZBZAjNoaQdxK4o93U9UwGLPYIgy4ZABwkjH5ZBOm4L3aX1x0x4jLtXt8ZAxe3j9qYLpKWeYA2QfMTFt4lVBNB8QjlY0IlgX92yl6SMxH4uKO1QMCJHHYKZBJy9BqZAEJxApMkAZDZD&quot;)
 client.send_text_message(recipient_id=&quot;1198828066838820&quot;, text=&quot;hello world!&quot;)
-
 </code></pre>
 
 <h2 id="installation">Installation</h2>
@@ -150,6 +150,10 @@ make up
 
 <p>To execute the tests:</p>
 <pre><code class="sh">make test
+</code></pre>
+
+<p>To create coverage report:</p>
+<pre><code class="sh">make coverage
 </code></pre>
               
             </div>
@@ -199,5 +203,5 @@ make up
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2018-12-07 16:02:57
+Build Date UTC : 2018-12-14 16:08:43
 -->
