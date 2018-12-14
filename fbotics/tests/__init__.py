@@ -3,4 +3,4 @@ class ANY:
         self.dtype = dtype
 
     def __eq__(self, actual):
-        return self.dtype == type(actual)
+        return isinstance(actual, self.dtype)
