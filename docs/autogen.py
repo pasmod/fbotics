@@ -27,8 +27,9 @@ EXCLUDE = {
 PAGES = [
     {
         'page': 'fbotics.md',
-        'classes': [
-            fbotics.Client
+        'methods': [
+            fbotics.Client.send_text_message,
+            fbotics.Client.retrieve_supported_tags,
         ],
     },
 ]

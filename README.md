@@ -25,13 +25,6 @@ client = Client(page_access_token="EAAQQHQvZAn7wBAHju9UsxuqWWcUreBozSf2zePcRZBZA
 client.send_text_message(recipient_id="1198828066838820", text="hello world!")
 ```
 
-Retrieve Supported Tags
-```
-from fbotics import Client
-client = Client(page_access_token="EAAQQHQvZAn7wBAHju9UsxuqWWcUreBozSf2zePcRZBZAjNoaQdxK4o93U9UwGLPYIgy4ZABwkjH5ZBOm4L3aX1x0x4jLtXt8ZAxe3j9qYLpKWeYA2QfMTFt4lVBNB8QjlY0IlgX92yl6SMxH4uKO1QMCJHHYKZBJy9BqZAEJxApMkAZDZD")
-client.retrieve_supported_tags()
-```
-
 ## Installation
 ------------------
 
