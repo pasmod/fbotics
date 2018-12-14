@@ -26,7 +26,7 @@ down:
 .PHONY: test
 # target: test – execute the tests
 test:
-	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest -vv fbotics/tests/functional
+	LOCAL_USER_ID=$(USER_ID) docker-compose run fbotics python -m pytest -vv fbotics/tests
 
 .PHONY: upload_testpypi
 # target: upload_testpypi – upload the package to Test Python package index
