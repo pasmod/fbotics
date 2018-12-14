@@ -1,5 +1,7 @@
 # FBotics: Python Client for Facebook Send API
 
+[![Build Status](https://travis-ci.org/pasmod/fbotics.svg?branch=master)](https://travis-ci.org/pasmod/fbotics)
+
 Read the documentation at [Fbotics.io](https://pasmod.github.io/fbotics/).
 
 
