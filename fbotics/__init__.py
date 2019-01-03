@@ -21,7 +21,7 @@ class Client(object):
     def __init__(self, page_access_token=None):
         self.page_access_token = page_access_token
 
-    def send_text_message(self, recipient_id=None, text=None):
+    def send_text_message(self, recipient_id=None, text=None, user_ref=None):
         """Sends a simple text message to a given recipient.
 
         # Arguments
@@ -34,7 +34,7 @@ class Client(object):
         ```
         """
         message = Message({"text": text})
-        recipient = Recipient({"id": recipient_id})
+        recipient = Recipient({"id": recipient_id, "user_ref": user_ref})
         request = Request({"recipient": recipient, "message": message})
         # throws DataError if validation fails
         request.validate()
