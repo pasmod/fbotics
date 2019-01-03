@@ -117,17 +117,21 @@ client = Client(page_access_token=&quot;PAGE_ACCESS_TOKEN&quot;)
 
 <h2 id="methods">Methods</h2>
 <h3 id="send_text_message">send_text_message</h3>
-<pre><code class="python">send_text_message(recipient_id=None, text=None)
+<pre><code class="python">send_text_message(recipient_id=None, text=None, user_ref=None, phone_number=None)
 </code></pre>
 
 <p>Sends a simple text message to a given recipient.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>recipient_id</strong>: id of the recipient</li>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
 <li><strong>text</strong>: message to be sent to the recipient</li>
+<li><strong>user_ref</strong>: optional. user_ref from the checkbox plugin</li>
+<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
 </ul>
 <p><strong>Examples</strong></p>
 <pre><code class="python">client.send_text_message(recipient_id=&quot;2157136727638083&quot;, text=&quot;hello world!&quot;)
+client.send_text_message(phone_number=&quot;+1 (555) 857-6309&quot;, text=&quot;hello world!&quot;)
+client.send_text_message(user_ref=&quot;&lt;UNIQUE_REF_PARAM&gt;&quot;, text=&quot;hello world!&quot;)
 </code></pre>
 
 <hr />
