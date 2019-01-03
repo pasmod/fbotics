@@ -1,8 +1,4 @@
-import pytest
-
-from fbotics import OAuthException
-from fbotics.tests import ANY
-from pytest_voluptuous import S, Partial, Exact
+from pytest_voluptuous import S, Partial
 
 
 def test_retrieve_supported_tags_response_status_code_is_200(

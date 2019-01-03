@@ -1,7 +1,7 @@
 import pytest
+from schematics.exceptions import DataError
 
 from fbotics.models.request import Request
-from schematics.exceptions import DataError
 
 
 def test_if_supported_tags_are_valid(client):
