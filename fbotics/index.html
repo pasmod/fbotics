@@ -65,7 +65,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#send_text_message">send_text_message</a></li>
+            <li><a class="toctree-l3" href="#send_message">send_message</a></li>
         
             <li><a class="toctree-l3" href="#retrieve_supported_tags">retrieve_supported_tags</a></li>
         
@@ -116,17 +116,18 @@ client = Client(page_access_token=&quot;PAGE_ACCESS_TOKEN&quot;)
 </code></pre>
 
 <h2 id="methods">Methods</h2>
-<h3 id="send_text_message">send_text_message</h3>
-<pre><code class="python">send_text_message(recipient_id=None, text=None, user_ref=None, phone_number=None)
+<h3 id="send_message">send_message</h3>
+<pre><code class="python">send_message(recipient_id=None, text=None, user_ref=None, phone_number=None, quick_replies=None)
 </code></pre>
 
-<p>Sends a simple text message to a given recipient.</p>
+<p>Sends a  message to a given recipient.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>recipient_id</strong>: page specific id of the recipient</li>
 <li><strong>text</strong>: message to be sent to the recipient</li>
 <li><strong>user_ref</strong>: optional. user_ref from the checkbox plugin</li>
 <li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
+<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
 </ul>
 <p><strong>Examples</strong></p>
 <pre><code class="python">client.send_text_message(recipient_id=&quot;2157136727638083&quot;, text=&quot;hello world!&quot;)
