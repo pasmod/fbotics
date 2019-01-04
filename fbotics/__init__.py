@@ -21,19 +21,21 @@ class Client(object):
     def __init__(self, page_access_token=None):
         self.page_access_token = page_access_token
 
-    def send_text_message(
+    def send_message(
             self,
             recipient_id=None,
             text=None,
             user_ref=None,
-            phone_number=None):
-        """Sends a simple text message to a given recipient.
+            phone_number=None,
+            quick_replies=None):
+        """Sends a  message to a given recipient.
 
         # Arguments
             recipient_id: page specific id of the recipient
             text: message to be sent to the recipient
             user_ref: optional. user_ref from the checkbox plugin
             phone_number: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.
+            quick_replies: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.
 
         # Examples
         ```python
@@ -42,7 +44,7 @@ class Client(object):
         client.send_text_message(user_ref="<UNIQUE_REF_PARAM>", text="hello world!")
         ```
         """
-        message = Message({"text": text})
+        message = Message({"text": text, "quick_replies": quick_replies})
         recipient = Recipient(
             {"id": recipient_id, "user_ref": user_ref, "phone_number": phone_number})
         request = Request({"recipient": recipient, "message": message})

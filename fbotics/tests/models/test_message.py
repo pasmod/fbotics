@@ -10,6 +10,6 @@ def test_validation_when_text_of_message_is_too_long(client):
     WHEN validating the object
     THEN is throws a validation error
     """
-    m = Message({"text": "*"*2001})
+    m = Message({"text": "*" * 2001})
     with pytest.raises(DataError):
         m.validate()
