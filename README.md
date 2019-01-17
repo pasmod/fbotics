@@ -51,7 +51,12 @@ response = client.send_message(
 
 ## Installation
 
-You can install FBotics from GitHub source:
+You can install the latest version of FBotics using pip:
+```sh
+pip install fbotics
+```
+
+You can also install FBotics from GitHub source:
 
 First, clone FBotics using `git`:
 
