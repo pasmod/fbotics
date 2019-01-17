@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/pasmod/fbotics.svg?branch=master)](https://travis-ci.org/pasmod/fbotics)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/pasmod/fbotics/blob/master/LICENSE.txt)
 [![codecov](https://codecov.io/gh/pasmod/fbotics/branch/master/graph/badge.svg)](https://codecov.io/gh/pasmod/fbotics)
+[![pypi](https://img.shields.io/pypi/v/fbotics.svg)](https://pypi.org/project/fbotics/)
+
 
 Read the documentation at [Fbotics.io](https://pasmod.github.io/fbotics/).
 
