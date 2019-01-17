@@ -110,21 +110,40 @@
               
                 <h1 id="fbotics-the-python-client-for-facebook-send-api">FBotics: The Python Client for Facebook Send API</h1>
 <h2 id="overview">Overview</h2>
-<hr />
 <p>FBotics is a Python client for Facebook Send API. The Send API is the main API used to send messages to users, including text,
 attachments, structured message templates, sender actions, and more. The goal of this project is to privide a clean and professional
 client, which can be used in production environments. For this, each new functionality added will be fully tested and
 documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.</p>
 <h2 id="getting-started">Getting started</h2>
-<hr />
-<p>Send a Text Message</p>
-<pre><code>from fbotics import Client
-client = Client(page_access_token=&quot;EAAQQHQvZAn7wBAHju9UsxuqWWcUreBozSf2zePcRZBZAjNoaQdxK4o93U9UwGLPYIgy4ZABwkjH5ZBOm4L3aX1x0x4jLtXt8ZAxe3j9qYLpKWeYA2QfMTFt4lVBNB8QjlY0IlgX92yl6SMxH4uKO1QMCJHHYKZBJy9BqZAEJxApMkAZDZD&quot;)
-client.send_text_message(recipient_id=&quot;1198828066838820&quot;, text=&quot;hello world!&quot;)
+<p>First create an instance of the client with the access token of your Facebook page:</p>
+<pre><code class="python">from fbotics import Client
+client = Client(page_access_token=&quot;EAAHIhFHZCIQIBAAme5oAtHehYfrZCvyUZAMLABGEW8ZBmdZASYFp8wdhtbD3POKbT7m3yOnue9Y2JrYZAZBSVne0yHfdKKKfxrjL1aZB5nFCWVjBZA7BiZBNsMrVhSZCfqi4cB6CZCi2CUh41waGNlIc7gcFxAl421dqoNBUPD5ZAjxiHrAJmDRdYx8ATJRBkRqRhowMZD&quot;)
 </code></pre>
 
+<h4 id="sending-a-text-message">Sending a Text Message</h4>
+<pre><code class="python">client.send_message(recipient_id=&quot;2157136727638083&quot;, text=&quot;hello world!&quot;)
+</code></pre>
+
+<p><img alt="TextMessagey" src="http://i65.tinypic.com/20f95q1.png" /></p>
+<h4 id="sending-quick-replies">Sending Quick Replies</h4>
+<pre><code class="python">from fbotics.models.quick_reply import QuickReply
+qr1 = QuickReply({&quot;content_type&quot;: &quot;text&quot;,
+                  &quot;title&quot;: &quot;Yes&quot;,
+                  &quot;payload&quot;: &quot;payload1&quot;,
+                  &quot;image_url&quot;: &quot;http://i64.tinypic.com/1hothh.png&quot;})
+qr2 = QuickReply({&quot;content_type&quot;: &quot;text&quot;,
+                  &quot;title&quot;: &quot;No&quot;,
+                  &quot;payload&quot;: &quot;payload2&quot;,
+                  &quot;image_url&quot;: &quot;http://i63.tinypic.com/2pqpbth.png&quot;})
+quick_replies = [qr1, qr2]
+response = client.send_message(
+        recipient_id=2157136727638083,
+        text=&quot;Text Message with Quick Replies&quot;,
+        quick_replies=quick_replies)
+</code></pre>
+
+<p><img alt="QuickReply" src="http://i64.tinypic.com/33myeyu.png" /></p>
 <h2 id="installation">Installation</h2>
-<hr />
 <p>You can install FBotics from GitHub source:</p>
 <p>First, clone FBotics using <code>git</code>:</p>
 <pre><code class="sh">git clone git@github.com:pasmod/fbotics.git
@@ -136,7 +155,6 @@ pip install .
 </code></pre>
 
 <h2 id="development-testing">Development &amp; Testing</h2>
-<hr />
 <p>Before developing FBotics further, please install Docker. For building the Docker image and installing all dependencies
 of FBotics, run:</p>
 <pre><code class="sh">cd fbotics
@@ -203,5 +221,5 @@ make up
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-01-04 16:17:16
+Build Date UTC : 2019-01-17 16:52:26
 -->

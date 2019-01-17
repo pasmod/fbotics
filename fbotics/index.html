@@ -130,9 +130,26 @@ client = Client(page_access_token=&quot;PAGE_ACCESS_TOKEN&quot;)
 <li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
 </ul>
 <p><strong>Examples</strong></p>
+<p>Sending a Text Message</p>
 <pre><code class="python">client.send_text_message(recipient_id=&quot;2157136727638083&quot;, text=&quot;hello world!&quot;)
 client.send_text_message(phone_number=&quot;+1 (555) 857-6309&quot;, text=&quot;hello world!&quot;)
 client.send_text_message(user_ref=&quot;&lt;UNIQUE_REF_PARAM&gt;&quot;, text=&quot;hello world!&quot;)
+</code></pre>
+
+<p>Sending Quick Replies</p>
+<pre><code class="python">from fbotics.models.quick_reply import QuickReply
+qr1 = QuickReply({&quot;content_type&quot;: &quot;text&quot;,
+                  &quot;title&quot;: &quot;Yes&quot;,
+                  &quot;payload&quot;: &quot;payload1&quot;,
+                  &quot;image_url&quot;: &quot;http://i64.tinypic.com/1hothh.png&quot;})
+qr2 = QuickReply({&quot;content_type&quot;: &quot;text&quot;,
+                  &quot;title&quot;: &quot;No&quot;,
+                  &quot;payload&quot;: &quot;payload2&quot;,
+                  &quot;image_url&quot;: &quot;http://i63.tinypic.com/2pqpbth.png&quot;})
+quick_replies = [qr1, qr2]
+response = client.send_message(recipient_id=2157136727638083,
+                              text=&quot;Text Message with Quick Replies&quot;,
+                              quick_replies=quick_replies)
 </code></pre>
 
 <hr />
