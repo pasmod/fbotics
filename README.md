@@ -18,12 +18,38 @@ documented. Currently this project is under development and offers a limited set
 ## Getting started
 ------------------
 
-Send a Text Message
+First create an instance of the client with the access token of your Facebook page:
 ```
 from fbotics import Client
-client = Client(page_access_token="EAAQQHQvZAn7wBAHju9UsxuqWWcUreBozSf2zePcRZBZAjNoaQdxK4o93U9UwGLPYIgy4ZABwkjH5ZBOm4L3aX1x0x4jLtXt8ZAxe3j9qYLpKWeYA2QfMTFt4lVBNB8QjlY0IlgX92yl6SMxH4uKO1QMCJHHYKZBJy9BqZAEJxApMkAZDZD")
-client.send_text_message(recipient_id="1198828066838820", text="hello world!")
+client = Client(page_access_token="EAAHIhFHZCIQIBAAme5oAtHehYfrZCvyUZAMLABGEW8ZBmdZASYFp8wdhtbD3POKbT7m3yOnue9Y2JrYZAZBSVne0yHfdKKKfxrjL1aZB5nFCWVjBZA7BiZBNsMrVhSZCfqi4cB6CZCi2CUh41waGNlIc7gcFxAl421dqoNBUPD5ZAjxiHrAJmDRdYx8ATJRBkRqRhowMZD")
 ```
+
+Sending a Text Message
+```
+client.send_message(recipient_id="2157136727638083", text="hello world!")
+```
+
+![TextMessagey](http://i63.tinypic.com/157j7di.png)
+
+Sending Quick Replies
+```
+from fbotics.models.quick_reply import QuickReply
+qr1 = QuickReply({"content_type": "text",
+                  "title": "Yes",
+                  "payload": "payload1",
+                  "image_url": "http://i64.tinypic.com/1hothh.png"})
+qr2 = QuickReply({"content_type": "text",
+                  "title": "No",
+                  "payload": "payload2",
+                  "image_url": "http://i63.tinypic.com/2pqpbth.png"})
+quick_replies = [qr1, qr2]
+response = client.send_message(
+        recipient_id=2157136727638083,
+        text="Text Message with Quick Replies",
+        quick_replies=quick_replies)
+```
+
+![QuickReply](http://i64.tinypic.com/3ah7c.png)
 
 ## Installation
 ------------------
