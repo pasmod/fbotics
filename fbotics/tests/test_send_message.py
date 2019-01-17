@@ -51,13 +51,13 @@ def test_sending_text_message_with_quick_replies_to_valid_recipient(
     THEN the status code of the response is 200
     """
     qr1 = QuickReply({"content_type": "text",
-                      "title": "Title1",
+                      "title": "Yes",
                       "payload": "payload1",
-                      "image_url": "https://code.fb.com/wp-content/uploads/2011/05/f.png"})
+                      "image_url": "http://i64.tinypic.com/1hothh.png"})
     qr2 = QuickReply({"content_type": "text",
-                      "title": "Title2",
+                      "title": "No",
                       "payload": "payload2",
-                      "image_url": "https://code.fb.com/wp-content/uploads/2011/05/f.png"})
+                      "image_url": "http://i63.tinypic.com/2pqpbth.png"})
     quick_replies = [qr1, qr2]
     response = client.send_message(
         recipient_id=recipient_id,
