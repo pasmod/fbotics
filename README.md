@@ -8,7 +8,6 @@ Read the documentation at [Fbotics.io](https://pasmod.github.io/fbotics/).
 
 
 ## Overview
-------------------
 
 FBotics is a Python client for Facebook Send API. The Send API is the main API used to send messages to users, including text,
 attachments, structured message templates, sender actions, and more. The goal of this project is to privide a clean and professional
@@ -16,23 +15,22 @@ client, which can be used in production environments. For this, each new functio
 documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.
 
 ## Getting started
-------------------
 
 First create an instance of the client with the access token of your Facebook page:
-```
+```python
 from fbotics import Client
 client = Client(page_access_token="EAAHIhFHZCIQIBAAme5oAtHehYfrZCvyUZAMLABGEW8ZBmdZASYFp8wdhtbD3POKbT7m3yOnue9Y2JrYZAZBSVne0yHfdKKKfxrjL1aZB5nFCWVjBZA7BiZBNsMrVhSZCfqi4cB6CZCi2CUh41waGNlIc7gcFxAl421dqoNBUPD5ZAjxiHrAJmDRdYx8ATJRBkRqRhowMZD")
 ```
 
-Sending a Text Message
-```
+#### Sending a Text Message
+```python
 client.send_message(recipient_id="2157136727638083", text="hello world!")
 ```
 
-![TextMessagey](http://i63.tinypic.com/157j7di.png)
+![TextMessagey](http://i65.tinypic.com/20f95q1.png)
 
-Sending Quick Replies
-```
+#### Sending Quick Replies
+```python
 from fbotics.models.quick_reply import QuickReply
 qr1 = QuickReply({"content_type": "text",
                   "title": "Yes",
@@ -49,10 +47,9 @@ response = client.send_message(
         quick_replies=quick_replies)
 ```
 
-![QuickReply](http://i64.tinypic.com/3ah7c.png)
+![QuickReply](http://i64.tinypic.com/33myeyu.png)
 
 ## Installation
-------------------
 
 You can install FBotics from GitHub source:
 
@@ -69,7 +66,6 @@ pip install .
 ```
 
 ## Development & Testing
-------------------
 
 Before developing FBotics further, please install Docker. For building the Docker image and installing all dependencies
 of FBotics, run:
