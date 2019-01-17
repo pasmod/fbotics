@@ -28,7 +28,7 @@ PAGES = [
     {
         'page': 'fbotics.md',
         'methods': [
-            fbotics.Client.send_text_message,
+            fbotics.Client.send_message,
             fbotics.Client.retrieve_supported_tags,
         ],
     },

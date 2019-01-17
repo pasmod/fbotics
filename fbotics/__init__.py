@@ -38,10 +38,28 @@ class Client(object):
             quick_replies: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.
 
         # Examples
+        Sending a Text Message
         ```python
-        client.send_text_message(recipient_id="2157136727638083", text="hello world!")
-        client.send_text_message(phone_number="+1 (555) 857-6309", text="hello world!")
-        client.send_text_message(user_ref="<UNIQUE_REF_PARAM>", text="hello world!")
+            client.send_text_message(recipient_id="2157136727638083", text="hello world!")
+            client.send_text_message(phone_number="+1 (555) 857-6309", text="hello world!")
+            client.send_text_message(user_ref="<UNIQUE_REF_PARAM>", text="hello world!")
+        ```
+
+        Sending Quick Replies
+        ```python
+            from fbotics.models.quick_reply import QuickReply
+            qr1 = QuickReply({"content_type": "text",
+                              "title": "Yes",
+                              "payload": "payload1",
+                              "image_url": "http://i64.tinypic.com/1hothh.png"})
+            qr2 = QuickReply({"content_type": "text",
+                              "title": "No",
+                              "payload": "payload2",
+                              "image_url": "http://i63.tinypic.com/2pqpbth.png"})
+            quick_replies = [qr1, qr2]
+            response = client.send_message(recipient_id=2157136727638083,
+                                          text="Text Message with Quick Replies",
+                                          quick_replies=quick_replies)
         ```
         """
         message = Message({"text": text, "quick_replies": quick_replies})
