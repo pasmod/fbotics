@@ -4,8 +4,10 @@ from schematics.types import StringType
 from schematics.types.compound import ModelType
 
 from fbotics.models.quick_reply import QuickReply
+from fbotics.models.attachment import Attachment
 
 
 class Message(Model):
-    text = StringType(required=True, max_length=2000)
+    text = StringType(required=False, max_length=2000)
+    attachment = ModelType(Attachment, required=False)
     quick_replies = ListType(ModelType(QuickReply), required=False)

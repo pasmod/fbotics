@@ -27,7 +27,8 @@ class Client(object):
             text=None,
             user_ref=None,
             phone_number=None,
-            quick_replies=None):
+            quick_replies=None,
+            attachment=None):
         """Sends a  message to a given recipient.
 
         # Arguments
@@ -62,7 +63,9 @@ class Client(object):
                                           quick_replies=quick_replies)
         ```
         """
-        message = Message({"text": text, "quick_replies": quick_replies})
+        message = Message({"text": text,
+                           "quick_replies": quick_replies,
+                           "attachment": attachment})
         recipient = Recipient(
             {"id": recipient_id, "user_ref": user_ref, "phone_number": phone_number})
         request = Request({"recipient": recipient, "message": message})
