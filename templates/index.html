@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Template Payloads - FBotics Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Template Payloads";
+    var mkdocs_page_input_path = "templates.md";
+    var mkdocs_page_url = "/fbotics/templates/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> FBotics Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../fbotics/">Send API</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../buttons/">Buttons</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Template Payloads</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#buttontemplatepayload">ButtonTemplatePayload</a></li>
+    
+
+    <li class="toctree-l2"><a href="#generictemplatepayload">GenericTemplatePayload</a></li>
+    
+
+    <li class="toctree-l2"><a href="#genericelement">GenericElement</a></li>
+    
+
+    <li class="toctree-l2"><a href="#genericdefaultaction">GenericDefaultAction</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">FBotics Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Template Payloads</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/button_template.py#L19">[source]</a></span></p>
+<h3 id="buttontemplatepayload">ButtonTemplatePayload</h3>
+<pre><code class="python">schematics.models.ButtonTemplatePayload(raw_data=None, trusted_data=None, deserialize_mapping=None, init=True, partial=True, strict=True, validate=False, app_data=None, lazy=False)
+</code></pre>
+
+<p>The button template allows you to send a structured message that includes text and buttons.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>template_type</strong>: Value must be button.</li>
+<li><strong>text</strong>: UTF-8-encoded text of up to 640 characters. Text will appear above the buttons.</li>
+<li><strong>buttons</strong>: Set of 1-3 buttons that appear as call-to-actions.</li>
+<li><strong>sharable</strong>: Optional. Set to true to enable the native share button in Messenger for the template message. Defaults to false.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="python">from fbotics.models.payloads.button_template import ButtonTemplatePayload
+b1 = ...
+b2 = ...
+ButtonTemplatePayload(dict(text=&quot;What can I do?&quot;, buttons=[b1, b2]))
+</code></pre>
+
+<p float="center">
+<img src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/23204276_131607050888932_1057585862134464512_n.png?_nc_cat=106&_nc_ht=scontent-frx5-1.xx&oh=22abe202e08e4ff2747698761a5b59a7&oe=5CCD030A" width="30%" />
+</p>
+
+<hr />
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L68">[source]</a></span></p>
+<h3 id="generictemplatepayload">GenericTemplatePayload</h3>
+<pre><code class="python">schematics.models.GenericTemplatePayload(raw_data=None, trusted_data=None, deserialize_mapping=None, init=True, partial=True, strict=True, validate=False, app_data=None, lazy=False)
+</code></pre>
+
+<p>The generic template is a simple structured message that includes a title, subtitle, image, and up to three buttons. You may also specify a default_action object that sets a URL that will be opened in the Messenger webview when the template is tapped.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>template_type</strong>: Value must be generic.</li>
+<li><strong>sharable</strong>: Optional. Set to true to enable the native share button in Messenger for the template message. Defaults to false.</li>
+<li><strong>elements</strong>: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="python">from fbotics.models.payloads.generic_template import GenericTemplatePayload
+GenericTemplatePayload(dict(elements=[e1, e2]))
+</code></pre>
+
+<p float="center">
+<img src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/22880422_1740199342956641_1916832982102966272_n.png?_nc_cat=107&_nc_ht=scontent-frx5-1.xx&oh=fda380d28817467a4716646c15bb4353&oe=5CCA743C" width="30%" />
+</p>
+
+<hr />
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L39">[source]</a></span></p>
+<h3 id="genericelement">GenericElement</h3>
+<pre><code class="python">schematics.models.GenericElement(raw_data=None, trusted_data=None, deserialize_mapping=None, init=True, partial=True, strict=True, validate=False, app_data=None, lazy=False)
+</code></pre>
+
+<p>The generic template supports a maximum of 10 elements per message. At least one property must be set in addition to title.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>title</strong>: The title to display in the template. 80 character limit.</li>
+<li><strong>subtitle</strong>: Optional. The subtitle to display in the template. 80 character limit.</li>
+<li><strong>image_url</strong>: Optional. The URL of the image to display in the template.</li>
+<li><strong>default_action</strong>: Optional. The default action executed when the template is tapped. Accepts the same properties as URL button, except title.</li>
+<li><strong>buttons</strong>: Optional. An array of buttons to append to the template. A maximum of 3 buttons per element is supported.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="python">from fbotics.models.payloads.generic_template import GenericElement
+GenericElement(dict(title=&quot;Welcome!&quot;,
+                    image_url=&quot;https://petersfancybrownhats.com/company_image.png&quot;,
+                    subtitle=&quot;We have the right hat for everyone.&quot;,
+                    default_action=...,
+                    buttons=[b1, b2]))
+</code></pre>
+
+<hr />
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L17">[source]</a></span></p>
+<h3 id="genericdefaultaction">GenericDefaultAction</h3>
+<pre><code class="python">schematics.models.GenericDefaultAction(raw_data=None, trusted_data=None, deserialize_mapping=None, init=True, partial=True, strict=True, validate=False, app_data=None, lazy=False)
+</code></pre>
+
+<p>The default action executed when the template is tapped.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>type</strong>: Type of button. Must be web_url.</li>
+<li><strong>url</strong>: This URL is opened in a mobile browser when the button is tapped. Must use HTTPS protocol if messenger_extensions is true.</li>
+<li><strong>webview_height_ratio</strong>: Optional. Height of the Webview. Valid values: compact, tall, full. Defaults to full.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="python">from fbotics.models.payloads.generic_template import GenericDefaultAction
+GenericDefaultAction(dict(webview_height_ratio=&quot;full&quot;, url=&quot;http://www.google.com&quot;))
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../buttons/" class="btn btn-neutral" title="Buttons"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../buttons/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

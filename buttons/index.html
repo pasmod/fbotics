@@ -75,6 +75,11 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../templates/">Template Payloads</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -119,17 +124,17 @@
 <li><strong>type</strong>: Type of button, which is web_url.</li>
 <li><strong>title</strong>: Button title. 20 character limit.</li>
 <li><strong>webview_height_ratio</strong>: Optional. Height of the Webview. Valid values: compact, tall, full. Defaults to full.</li>
-<li><strong>url</strong>: This URL is opened in a mobile browser when the button is tapped. Must use HTTPS protocol if messenger_extensions is true.</li>
+<li><strong>url</strong>: This URL is opened in a mobile browser when the button is tapped. Must use
+ HTTPS protocol if messenger_extensions is true.</li>
 </ul>
 <p><strong>Examples</strong></p>
-<p>WebUrlButton</p>
 <pre><code class="python">from fbotics.models.buttons import WebUrlButton
 WebUrlButton(dict(title=&quot;hello&quot;, url=&quot;http://www.google.de&quot;))
 </code></pre>
 
 <p><img alt="WebUrlButton" src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/17531046_119179685297959_5232300000901332992_n.png?_nc_cat=108&amp;_nc_ht=scontent-frx5-1.xx&amp;oh=bdbdcdee9438decf565412855582046c&amp;oe=5CB66C96" /></p>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L28">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L30">[source]</a></span></p>
 <h3 id="callbutton">CallButton</h3>
 <pre><code class="python">schematics.models.CallButton(raw_data=None, trusted_data=None, deserialize_mapping=None, init=True, partial=True, strict=True, validate=False, app_data=None, lazy=False)
 </code></pre>
@@ -142,7 +147,6 @@ WebUrlButton(dict(title=&quot;hello&quot;, url=&quot;http://www.google.de&quot;)
 <li><strong>payload</strong>: Format must have "+" prefix followed by the country code, area code and local number. For example, +16505551234.</li>
 </ul>
 <p><strong>Examples</strong></p>
-<p>CallButton</p>
 <pre><code class="python">from fbotics.models.buttons import CallButton
 CallButton(dict(title=&quot;Call Representative&quot;, payload=&quot;+15105551234&quot;))
 </code></pre>
@@ -153,7 +157,7 @@ CallButton(dict(title=&quot;Call Representative&quot;, payload=&quot;+1510555123
 </p>
 
 <hr />
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L52">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L53">[source]</a></span></p>
 <h3 id="postbackbutton">PostbackButton</h3>
 <pre><code class="python">schematics.models.PostbackButton(raw_data=None, trusted_data=None, deserialize_mapping=None, init=True, partial=True, strict=True, validate=False, app_data=None, lazy=False)
 </code></pre>
@@ -166,7 +170,6 @@ CallButton(dict(title=&quot;Call Representative&quot;, payload=&quot;+1510555123
 <li><strong>payload</strong>: This data will be sent back to your webhook. 1000 character limit.</li>
 </ul>
 <p><strong>Examples</strong></p>
-<p>CallButton</p>
 <pre><code class="python">from fbotics.models.buttons import PostbackButton
 PostbackButton(dict(title=&quot;Select Product&quot;, payload=&quot;a4f8#4k3&quot;))
 </code></pre>
@@ -176,6 +179,8 @@ PostbackButton(dict(title=&quot;Select Product&quot;, payload=&quot;a4f8#4k3&quo
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../templates/" class="btn btn-neutral float-right" title="Template Payloads">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../fbotics/" class="btn btn-neutral" title="Send API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -206,6 +211,8 @@ PostbackButton(dict(title=&quot;Select Product&quot;, payload=&quot;a4f8#4k3&quo
       
         <span><a href="../fbotics/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../templates/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
