@@ -12,7 +12,6 @@ class WebUrlButton(Model):
         url: This URL is opened in a mobile browser when the button is tapped. Must use HTTPS protocol if messenger_extensions is true.
 
     # Examples
-        WebUrlButton
         ```python
             from fbotics.models.buttons import WebUrlButton
             WebUrlButton(dict(title="hello", url="http://www.google.de"))
@@ -21,7 +20,9 @@ class WebUrlButton(Model):
     """
     type = StringType(required=True, default="web_url", choices=["web_url"])
     title = StringType(required=True, max_length=20)
-    webview_height_ratio = StringType(required=False, default="full", choices=["compact", "tall", "full"])
+    webview_height_ratio = StringType(
+        required=False, default="full", choices=[
+            "compact", "tall", "full"])
     url = StringType()
 
 
@@ -34,7 +35,6 @@ class CallButton(Model):
         payload: Format must have "+" prefix followed by the country code, area code and local number. For example, +16505551234.
 
     # Examples
-        CallButton
         ```python
             from fbotics.models.buttons import CallButton
             CallButton(dict(title="Call Representative", payload="+15105551234"))
@@ -58,7 +58,6 @@ class PostbackButton(Model):
         payload: This data will be sent back to your webhook. 1000 character limit.
 
     # Examples
-        CallButton
         ```python
             from fbotics.models.buttons import PostbackButton
             PostbackButton(dict(title="Select Product", payload="a4f8#4k3"))
