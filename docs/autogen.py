@@ -46,7 +46,8 @@ PAGES = [
             fbotics.models.payloads.button_template.ButtonTemplatePayload,
             fbotics.models.payloads.generic_template.GenericTemplatePayload,
             fbotics.models.payloads.generic_template.GenericElement,
-            fbotics.models.payloads.generic_template.GenericDefaultAction
+            fbotics.models.payloads.generic_template.GenericDefaultAction,
+            fbotics.models.payloads.rich_media.RichMediaPayload
         ],
     }
 ]
