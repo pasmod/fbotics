@@ -9,7 +9,8 @@ class WebUrlButton(Model):
         type: Type of button, which is web_url.
         title: Button title. 20 character limit.
         webview_height_ratio: Optional. Height of the Webview. Valid values: compact, tall, full. Defaults to full.
-        url: This URL is opened in a mobile browser when the button is tapped. Must use HTTPS protocol if messenger_extensions is true.
+        url: This URL is opened in a mobile browser when the button is tapped. Must use
+         HTTPS protocol if messenger_extensions is true.
 
     # Examples
         ```python
