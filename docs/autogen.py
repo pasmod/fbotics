@@ -32,6 +32,23 @@ PAGES = [
             fbotics.Client.retrieve_supported_tags,
         ],
     },
+    {
+        'page': 'buttons.md',
+        'classes': [
+            fbotics.models.buttons.WebUrlButton,
+            fbotics.models.buttons.CallButton,
+            fbotics.models.buttons.PostbackButton
+        ],
+    },
+    {
+        'page': 'templates.md',
+        'classes': [
+            fbotics.models.payloads.button_template.ButtonTemplatePayload,
+            fbotics.models.payloads.generic_template.GenericTemplatePayload,
+            fbotics.models.payloads.generic_template.GenericElement,
+            fbotics.models.payloads.generic_template.GenericDefaultAction
+        ],
+    }
 ]
 
 ROOT = 'http://fbotics.io/'
@@ -110,8 +127,8 @@ def class_to_source_link(cls):
     path = module_name.replace('.', '/')
     path += '.py'
     line = inspect.getsourcelines(cls)[-1]
-    link = ('https://github.com/keras-team/'
-            'keras/blob/master/' + path + '#L' + str(line))
+    link = ('https://github.com/pasmod/'
+            'fbotics/blob/master/' + path + '#L' + str(line))
     return '[[source]](' + link + ')'
 
 
