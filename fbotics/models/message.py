@@ -3,8 +3,8 @@ from schematics.types import ListType
 from schematics.types import StringType
 from schematics.types.compound import ModelType
 
-from fbotics.models.quick_reply import QuickReply
 from fbotics.models.attachment import Attachment
+from fbotics.models.quick_reply import QuickReply
 
 
 class Message(Model):
