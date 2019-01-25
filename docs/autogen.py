@@ -41,6 +41,12 @@ PAGES = [
         ],
     },
     {
+        'page': 'message.md',
+        'classes': [
+            fbotics.models.message.Message,
+        ],
+    },
+    {
         'page': 'templates.md',
         'classes': [
             fbotics.models.payloads.button_template.ButtonTemplatePayload,

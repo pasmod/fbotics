@@ -11,4 +11,5 @@ nav:
 - Home: index.md
 - Send API: fbotics.md
 - Buttons: buttons.md
+- Message: message.md
 - Template Payloads: templates.md
