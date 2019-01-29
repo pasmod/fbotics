@@ -2,22 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://pasmod.github.io/fbotics/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://pasmod.github.io/fbotics/fbotics/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <loc>https://pasmod.github.io/fbotics/send/client/</loc>
+     <lastmod>2019-01-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://pasmod.github.io/fbotics/buttons/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <loc>https://pasmod.github.io/fbotics/send/request/</loc>
+     <lastmod>2019-01-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://pasmod.github.io/fbotics/templates/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <loc>https://pasmod.github.io/fbotics/send/recipient/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/send/message/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/send/attachment/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/quick_replies/quick_replies/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/quick_replies/example/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/_templates/button_template/button_template/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/_templates/generic_template/generic_template/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/message/</loc>
+     <lastmod>2019-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
 </urlset>
