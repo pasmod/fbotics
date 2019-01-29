@@ -19,6 +19,13 @@ def payload_claim_function(field, data):
 
 
 class Attachment(Model):
+    """The following can be included in the attachment object: Rich media messages including images, audios, videos, or files and Templates including generic template, button template, receipt template, or list template.
+
+    # Arguments
+        type: Type of attachment, may be image, audio, video, file or template. For assets, max file size is 25MB.
+        payload: Payload of attachment
+
+    """
     type = StringType(
         required=True,
         choices=[

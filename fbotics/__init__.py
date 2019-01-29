@@ -21,6 +21,7 @@ class Client(object):
     def __init__(self, page_access_token=None):
         self.page_access_token = page_access_token
 
+
     def send_message(
             self,
             recipient_id=None,

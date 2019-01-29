@@ -17,23 +17,49 @@ if sys.version[0] == '2':
 EXCLUDE = {
 }
 
-# For each class to document, it is possible to:
-# 1) Document only the class: [classA, classB, ...]
-# 2) Document all its methods: [classA, (classB, "*")]
-# 3) Choose which methods to document (methods listed as strings):
-# [classA, (classB, ["method1", "method2", ...]), ...]
-# 4) Choose which methods to document (methods listed as qualified names):
-# [classA, (classB, [module.classB.method1, module.classB.method2, ...]), ...]
+
 PAGES = [
     {
-        'page': 'fbotics.md',
+        'page': '_templates/generic_template/generic_template.md',
+        'classes': [
+            fbotics.models.payloads.generic_template.GenericTemplatePayload,
+            fbotics.models.payloads.generic_template.GenericElement,
+            fbotics.models.payloads.generic_template.GenericDefaultAction,
+        ],
+    },
+    {
+        'page': '_templates/button_template/button_template.md',
+        'classes': [
+            fbotics.models.payloads.button_template.ButtonTemplatePayload,
+        ],
+    },
+    {
+        'page': 'send/client.md',
         'methods': [
             fbotics.Client.send_message,
             fbotics.Client.retrieve_supported_tags,
         ],
     },
     {
-        'page': 'buttons.md',
+        'page': 'quick_replies/quick_replies.md',
+        'classes': [
+            fbotics.models.quick_reply.QuickReply,
+        ],
+    },
+    {
+        'page': 'send/request.md',
+        'classes': [
+            fbotics.models.request.Request,
+        ],
+    },
+    {
+        'page': 'send/recipient.md',
+        'classes': [
+            fbotics.models.recipient.Recipient,
+        ],
+    },
+    {
+        'page': 'buttons/buttons.md',
         'classes': [
             fbotics.models.buttons.WebUrlButton,
             fbotics.models.buttons.CallButton,
@@ -41,28 +67,38 @@ PAGES = [
         ],
     },
     {
-        'page': 'message.md',
+        'page': 'send/message.md',
         'classes': [
             fbotics.models.message.Message,
         ],
     },
     {
-        'page': 'templates.md',
+        'page': 'send/attachment.md',
         'classes': [
-            fbotics.models.payloads.button_template.ButtonTemplatePayload,
-            fbotics.models.payloads.generic_template.GenericTemplatePayload,
-            fbotics.models.payloads.generic_template.GenericElement,
-            fbotics.models.payloads.generic_template.GenericDefaultAction,
-            fbotics.models.payloads.rich_media.RichMediaPayload
+            fbotics.models.attachment.Attachment,
         ],
-    }
+    },
 ]
 
 ROOT = 'http://fbotics.io/'
 
+def get_class_attr(Cls) -> []:
+    import re
+    return [a for a, v in Cls.__dict__.items()
+              if not re.match('<function.*?>', str(v))
+              and not (a.startswith('__') and a.endswith('__'))]
+
+def get_class_attr_val(cls):
+    attr = get_class_attr(type(cls))
+    attr_dict = {}
+    for a in attr:
+        attr_dict[a] = getattr(cls, a)
+    return attr_dict
+
 
 def get_function_signature(function, method=True):
     wrapped = getattr(function, '_original_function', None)
+
     if wrapped is None:
         signature = inspect.getargspec(function)
     else:
@@ -93,17 +129,23 @@ def get_function_signature(function, method=True):
 
 
 def get_class_signature(cls):
-    try:
-        class_signature = get_function_signature(cls.__init__)
-        class_signature = class_signature.replace('__init__', cls.__name__)
-    except (TypeError, AttributeError):
-        # in case the class inherits from object and does not
-        # define __init__
-        class_signature = "{clean_module_name}.{cls_name}()".format(
-            clean_module_name=clean_module_name(cls.__module__),
-            cls_name=cls.__name__
-        )
-    return post_process_signature(class_signature)
+    signature = '%s.%s(' % (cls.__module__, cls.__name__)
+    class_attr_value_dict = get_class_attr_val(cls())
+    class_attr_value_dict.pop("_schema")
+    for k, v in class_attr_value_dict.items():
+        signature += str(k) + "=" + str(v) +  ', '
+    signature = signature[:-2] + ')'
+    #try:
+    #    class_signature = get_function_signature(cls.__init__)
+    #    class_signature = class_signature.replace('__init__', cls.__name__)
+    #except (TypeError, AttributeError):
+    #    # in case the class inherits from object and does not
+    #    # define __init__
+    #    class_signature = "{clean_module_name}.{cls_name}()".format(
+    #        clean_module_name=clean_module_name(cls.__module__),
+    #        cls_name=cls.__name__
+    #    )
+    return post_process_signature(signature)
 
 
 def post_process_signature(signature):

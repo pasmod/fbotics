@@ -8,6 +8,15 @@ def is_blank(string):
 
 
 class QuickReply(Model):
+    """Represent a message object in a request sent to Facebook.
+
+    # Arguments
+        content_type: Must be one of the following text: Sends a text button, location: Sends a button to collect the recipient's location, user_phone_number: Sends a button allowing recipient to send the phone number associated with their account.,user_email: Sends a button allowing recipient to send the email associated with their account.
+        title: Required if content_type is 'text'. The text to display on the quick reply button. 20 character limit.
+        payload: Required if content_type is 'text'. Custom data that will be sent back to you via the messaging_postbacks webhook event. 1000 character limit. May be set to an empty string if image_url is set.
+        image_url: Optional. URL of image to display on the quick reply button for text quick replies. Image should be a minimum of 24px x 24px. Larger images will be automatically cropped and resized. Required if title is an empty string.
+
+    """
     content_type = StringType(
         required=True,
         choices=[

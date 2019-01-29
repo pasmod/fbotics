@@ -8,6 +8,15 @@ from fbotics.models.recipient import Recipient
 
 
 class Request(Model):
+    """Model for a request to be send by the client.
+
+    # Arguments
+        messaging_type: The messaging type of the message being sent.
+        recipient: recipient object.
+        message: message object. Cannot be sent with sender_action.
+        tag: Optional. The message tag string.
+
+    """
     messaging_type = StringType(
         required=True,
         choices=[
