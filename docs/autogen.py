@@ -20,7 +20,7 @@ EXCLUDE = {
 
 PAGES = [
     {
-        'page': '_templates/generic_template/generic_template.md',
+        'page': 'generic_template/generic_template.md',
         'classes': [
             fbotics.models.payloads.generic_template.GenericTemplatePayload,
             fbotics.models.payloads.generic_template.GenericElement,
@@ -28,7 +28,7 @@ PAGES = [
         ],
     },
     {
-        'page': '_templates/button_template/button_template.md',
+        'page': 'button_template/button_template.md',
         'classes': [
             fbotics.models.payloads.button_template.ButtonTemplatePayload,
         ],

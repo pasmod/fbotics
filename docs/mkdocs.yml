@@ -22,10 +22,8 @@ nav:
   - Example: quick_replies/example.md
 - Buttons: buttons/buttons.md
 - Button Template:
-  - Template Payload: _templates/button_template/button_template.md
-  - Example: _templates/button_template/example.md
+  - Template Payload: button_template/button_template.md
+  - Example: button_template/example.md
 - Generic Template:
-  - Template Payload: _templates/generic_template/generic_template.md
-  - Example: _templates/generic_template/example.md
-- Message: message.md
-- Template Payloads: button_template.md
+  - Template Payload: generic_template/generic_template.md
+  - Example: generic_template/example.md

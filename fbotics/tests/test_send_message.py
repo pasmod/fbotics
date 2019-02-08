@@ -188,6 +188,5 @@ def test_sending_button_template_to_valid_recipient(client, recipient_id):
         )
     ).to_primitive()
     attachment = Attachment(dict(type="template", payload=button_template_payload))
-    print(attachment.to_primitive())
     response = client.send_message(recipient_id=recipient_id, attachment=attachment)
     assert response.status_code == 200
