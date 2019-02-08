@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for FBotics, the Python Client for Facebook Send API">
       
       
-        <link rel="canonical" href="https://pasmod.github.io/fbotics/_templates/generic_template/generic_template/">
+        <link rel="canonical" href="https://pasmod.github.io/fbotics/generic_template/generic_template/">
       
       
       
@@ -35,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
@@ -44,12 +44,12 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -58,7 +58,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -176,7 +176,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -207,7 +207,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../send/client/" title="Client" class="md-nav__link">
+    <a href="../../send/client/" title="Client" class="md-nav__link">
       Client
     </a>
   </li>
@@ -219,7 +219,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../send/request/" title="Request" class="md-nav__link">
+    <a href="../../send/request/" title="Request" class="md-nav__link">
       Request
     </a>
   </li>
@@ -231,7 +231,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../send/recipient/" title="Recipient" class="md-nav__link">
+    <a href="../../send/recipient/" title="Recipient" class="md-nav__link">
       Recipient
     </a>
   </li>
@@ -243,7 +243,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../send/message/" title="Message" class="md-nav__link">
+    <a href="../../send/message/" title="Message" class="md-nav__link">
       Message
     </a>
   </li>
@@ -255,7 +255,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../send/attachment/" title="Attachment" class="md-nav__link">
+    <a href="../../send/attachment/" title="Attachment" class="md-nav__link">
       Attachment
     </a>
   </li>
@@ -291,7 +291,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../quick_replies/quick_replies/" title="Quick Reply" class="md-nav__link">
+    <a href="../../quick_replies/quick_replies/" title="Quick Reply" class="md-nav__link">
       Quick Reply
     </a>
   </li>
@@ -303,7 +303,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../quick_replies/example/" title="Example" class="md-nav__link">
+    <a href="../../quick_replies/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -320,7 +320,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../buttons.md" title="Buttons" class="md-nav__link">
+    <a href="../../buttons/buttons/" title="Buttons" class="md-nav__link">
       Buttons
     </a>
   </li>
@@ -363,7 +363,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../button_template/example.md" title="Example" class="md-nav__link">
+    <a href="../../button_template/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -461,7 +461,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../example.md" title="Example" class="md-nav__link">
+    <a href="../example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -469,30 +469,6 @@
         
       </ul>
     </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../message/" title="Message" class="md-nav__link">
-      Message
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../button_template.md" title="Template Payloads" class="md-nav__link">
-      Template Payloads
-    </a>
   </li>
 
     
@@ -554,10 +530,12 @@
                 
                   <h1>Template Payload</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L68">[source]</a></span></p>
+                <p>The generic template allows you to send a structured message that includes an image, text and buttons. A generic template with multiple templates described in the elements array will send a horizontally scrollable carousel of items, each composed of an image, text and buttons. </p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L52">[source]</a></span></p>
 <h3 id="generictemplatepayload">GenericTemplatePayload</h3>
-<pre><code class="python">fbotics.models.payloads.generic_template.GenericTemplatePayload(template_type=generic, sharable=False, elements=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericTemplatePayload</span><span class="p">(</span><span class="n">template_type</span><span class="o">=</span><span class="n">generic</span><span class="p">,</span> <span class="n">sharable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>The generic template is a simple structured message that includes a title, subtitle, image, and up to three buttons. You may also specify a default_action object that sets a URL that will be opened in the Messenger webview when the template is tapped.</p>
 <p><strong>Arguments</strong></p>
@@ -566,20 +544,12 @@
 <li><strong>sharable</strong>: Optional. Set to true to enable the native share button in Messenger for the template message. Defaults to false.</li>
 <li><strong>elements</strong>: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</li>
 </ul>
-<p><strong>Examples</strong></p>
-<pre><code class="python">from fbotics.models.payloads.generic_template import GenericTemplatePayload
-GenericTemplatePayload(dict(elements=[e1, e2]))
-</code></pre>
-
-<p float="center">
-<img src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/22880422_1740199342956641_1916832982102966272_n.png?_nc_cat=107&_nc_ht=scontent-frx5-1.xx&oh=fda380d28817467a4716646c15bb4353&oe=5CCA743C" width="30%" />
-</p>
-
 <hr />
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L39">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L33">[source]</a></span></p>
 <h3 id="genericelement">GenericElement</h3>
-<pre><code class="python">fbotics.models.payloads.generic_template.GenericElement(title=None, image_url=None, subtitle=None, default_action=None, buttons=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericElement</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">default_action</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>The generic template supports a maximum of 10 elements per message. At least one property must be set in addition to title.</p>
 <p><strong>Arguments</strong></p>
@@ -590,20 +560,12 @@ GenericTemplatePayload(dict(elements=[e1, e2]))
 <li><strong>default_action</strong>: Optional. The default action executed when the template is tapped. Accepts the same properties as URL button, except title.</li>
 <li><strong>buttons</strong>: Optional. An array of buttons to append to the template. A maximum of 3 buttons per element is supported.</li>
 </ul>
-<p><strong>Examples</strong></p>
-<pre><code class="python">from fbotics.models.payloads.generic_template import GenericElement
-GenericElement(dict(title=&quot;Welcome!&quot;,
-                    image_url=&quot;https://petersfancybrownhats.com/company_image.png&quot;,
-                    subtitle=&quot;We have the right hat for everyone.&quot;,
-                    default_action=...,
-                    buttons=[b1, b2]))
-</code></pre>
-
 <hr />
 <p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L17">[source]</a></span></p>
 <h3 id="genericdefaultaction">GenericDefaultAction</h3>
-<pre><code class="python">fbotics.models.payloads.generic_template.GenericDefaultAction(type=web_url, webview_height_ratio=full, url=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericDefaultAction</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">web_url</span><span class="p">,</span> <span class="n">webview_height_ratio</span><span class="o">=</span><span class="n">full</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>The default action executed when the template is tapped.</p>
 <p><strong>Arguments</strong></p>
@@ -612,10 +574,6 @@ GenericElement(dict(title=&quot;Welcome!&quot;,
 <li><strong>url</strong>: This URL is opened in a mobile browser when the button is tapped. Must use HTTPS protocol if messenger_extensions is true.</li>
 <li><strong>webview_height_ratio</strong>: Optional. Height of the Webview. Valid values: compact, tall, full. Defaults to full.</li>
 </ul>
-<p><strong>Examples</strong></p>
-<pre><code class="python">from fbotics.models.payloads.generic_template import GenericDefaultAction
-GenericDefaultAction(dict(webview_height_ratio=&quot;full&quot;, url=&quot;http://www.google.com&quot;))
-</code></pre>
                 
                   
                 
@@ -636,7 +594,7 @@ GenericDefaultAction(dict(webview_height_ratio=&quot;full&quot;, url=&quot;http:
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../button_template/button_template/" title="Template Payload" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../button_template/example/" title="Example" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -645,19 +603,19 @@ GenericDefaultAction(dict(webview_height_ratio=&quot;full&quot;, url=&quot;http:
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Template Payload
+                Example
               </span>
             </div>
           </a>
         
         
-          <a href="../../../message/" title="Message" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../example/" title="Example" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Message
+                Example
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -687,9 +645,9 @@ GenericDefaultAction(dict(webview_height_ratio=&quot;full&quot;, url=&quot;http:
       
     </div>
     
-      <script src="../../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.a353778b.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
   </body>

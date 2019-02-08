@@ -318,11 +318,59 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../buttons.md" title="Buttons" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Buttons
+      </label>
+    
+    <a href="./" title="Buttons" class="md-nav__link md-nav__link--active">
       Buttons
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#weburlbutton" title="WebUrlButton" class="md-nav__link">
+    WebUrlButton
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbutton" title="CallButton" class="md-nav__link">
+    CallButton
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postbackbutton" title="PostbackButton" class="md-nav__link">
+    PostbackButton
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -351,7 +399,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../_templates/button_template/button_template/" title="Template Payload" class="md-nav__link">
+    <a href="../../button_template/button_template/" title="Template Payload" class="md-nav__link">
       Template Payload
     </a>
   </li>
@@ -363,7 +411,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../_templates/button_template/example.md" title="Example" class="md-nav__link">
+    <a href="../../button_template/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -399,7 +447,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../_templates/generic_template/generic_template/" title="Template Payload" class="md-nav__link">
+    <a href="../../generic_template/generic_template/" title="Template Payload" class="md-nav__link">
       Template Payload
     </a>
   </li>
@@ -411,7 +459,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../_templates/generic_template/example.md" title="Example" class="md-nav__link">
+    <a href="../../generic_template/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -419,30 +467,6 @@
         
       </ul>
     </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../message/" title="Message" class="md-nav__link">
-      Message
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../button_template.md" title="Template Payloads" class="md-nav__link">
-      Template Payloads
-    </a>
   </li>
 
     
@@ -504,11 +528,13 @@
                 
                   <h1>Buttons</h1>
                 
-                <p>These buttons allow you to easily offer the message recipient actions they can take in response to the template, such as opening the Messenger webview, starting a payment flow, sending a postback message to your webhook, and more.</p>
+                <p>Most message templates, as well as the persistent menu, support buttons that invoke different types of actions. These buttons allow you to easily offer the message recipient actions they can take in response to the template, such as opening the Messenger webview, starting a payment flow, sending a postback message to your webhook, and more.</p>
+<p>For message templates, buttons are included defined by objects in the buttons array. For the persistent menu, buttons are defined by objects in the call_to_actions array.</p>
 <p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L5">[source]</a></span></p>
 <h3 id="weburlbutton">WebUrlButton</h3>
-<pre><code class="python">fbotics.models.buttons.WebUrlButton(type=web_url, title=None, webview_height_ratio=full, url=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">WebUrlButton</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">web_url</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">webview_height_ratio</span><span class="o">=</span><span class="n">full</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>The URL Button opens a webpage in the Messenger webview. This button can be used with the Button and Generic Templates.</p>
 <p><strong>Arguments</strong></p>
@@ -520,16 +546,18 @@
  HTTPS protocol if messenger_extensions is true.</li>
 </ul>
 <p><strong>Examples</strong></p>
-<pre><code class="python">from fbotics.models.buttons import WebUrlButton
-WebUrlButton(dict(title=&quot;hello&quot;, url=&quot;http://www.google.de&quot;))
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics.models.buttons</span> <span class="kn">import</span> <span class="n">WebUrlButton</span>
+<span class="n">WebUrlButton</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://www.google.de&quot;</span><span class="p">))</span>
+</pre></div>
+
 
 <p><img alt="WebUrlButton" src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/17531046_119179685297959_5232300000901332992_n.png?_nc_cat=108&amp;_nc_ht=scontent-frx5-1.xx&amp;oh=bdbdcdee9438decf565412855582046c&amp;oe=5CB66C96" /></p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L30">[source]</a></span></p>
 <h3 id="callbutton">CallButton</h3>
-<pre><code class="python">fbotics.models.buttons.CallButton(type=phone_number, title=None, payload=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">CallButton</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">phone_number</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>The call button dials a phone number when tapped. Phone number should be in the format +<COUNTRY_CODE><PHONE_NUMBER>, e.g. +15105559999.</p>
 <p><strong>Arguments</strong></p>
@@ -539,9 +567,10 @@ WebUrlButton(dict(title=&quot;hello&quot;, url=&quot;http://www.google.de&quot;)
 <li><strong>payload</strong>: Format must have "+" prefix followed by the country code, area code and local number. For example, +16505551234.</li>
 </ul>
 <p><strong>Examples</strong></p>
-<pre><code class="python">from fbotics.models.buttons import CallButton
-CallButton(dict(title=&quot;Call Representative&quot;, payload=&quot;+15105551234&quot;))
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics.models.buttons</span> <span class="kn">import</span> <span class="n">CallButton</span>
+<span class="n">CallButton</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Call Representative&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;+15105551234&quot;</span><span class="p">))</span>
+</pre></div>
+
 
 <p float="center">
 <img src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/23204380_457498987984596_8630782823361413120_n.png?_nc_cat=105&_nc_ht=scontent-frx5-1.xx&oh=5fa24ef1529559b5c076dee459ade296&oe=5CB30ECD" width="30%" />
@@ -551,8 +580,9 @@ CallButton(dict(title=&quot;Call Representative&quot;, payload=&quot;+1510555123
 <hr />
 <p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/buttons.py#L53">[source]</a></span></p>
 <h3 id="postbackbutton">PostbackButton</h3>
-<pre><code class="python">fbotics.models.buttons.PostbackButton(type=postback, title=None, payload=None)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">PostbackButton</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">postback</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
 
 <p>The postback button sends a messaging_postbacks event to your webhook with the string set in the payload property. This allows you to take an arbitrary actions when the button is tapped. For example, you might display a list of products, then send the product ID in the postback to your webhook, where it can be used to query your database and return the product details as a structured message.</p>
 <p><strong>Arguments</strong></p>
@@ -562,9 +592,9 @@ CallButton(dict(title=&quot;Call Representative&quot;, payload=&quot;+1510555123
 <li><strong>payload</strong>: This data will be sent back to your webhook. 1000 character limit.</li>
 </ul>
 <p><strong>Examples</strong></p>
-<pre><code class="python">from fbotics.models.buttons import PostbackButton
-PostbackButton(dict(title=&quot;Select Product&quot;, payload=&quot;a4f8#4k3&quot;))
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics.models.buttons</span> <span class="kn">import</span> <span class="n">PostbackButton</span>
+<span class="n">PostbackButton</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Select Product&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;a4f8#4k3&quot;</span><span class="p">))</span>
+</pre></div>
                 
                   
                 
@@ -581,6 +611,41 @@ PostbackButton(dict(title=&quot;Select Product&quot;, payload=&quot;a4f8#4k3&quo
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../quick_replies/example/" title="Example" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Example
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../button_template/button_template/" title="Template Payload" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Template Payload
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

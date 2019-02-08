@@ -399,7 +399,7 @@
 
 
   <li class="md-nav__item">
-    <a href="buttons.md" title="Buttons" class="md-nav__link">
+    <a href="buttons/buttons/" title="Buttons" class="md-nav__link">
       Buttons
     </a>
   </li>
@@ -430,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="_templates/button_template/button_template/" title="Template Payload" class="md-nav__link">
+    <a href="button_template/button_template/" title="Template Payload" class="md-nav__link">
       Template Payload
     </a>
   </li>
@@ -442,7 +442,7 @@
 
 
   <li class="md-nav__item">
-    <a href="_templates/button_template/example.md" title="Example" class="md-nav__link">
+    <a href="button_template/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -478,7 +478,7 @@
 
 
   <li class="md-nav__item">
-    <a href="_templates/generic_template/generic_template/" title="Template Payload" class="md-nav__link">
+    <a href="generic_template/generic_template/" title="Template Payload" class="md-nav__link">
       Template Payload
     </a>
   </li>
@@ -490,7 +490,7 @@
 
 
   <li class="md-nav__item">
-    <a href="_templates/generic_template/example.md" title="Example" class="md-nav__link">
+    <a href="generic_template/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -498,30 +498,6 @@
         
       </ul>
     </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="message/" title="Message" class="md-nav__link">
-      Message
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="button_template.md" title="Template Payloads" class="md-nav__link">
-      Template Payloads
-    </a>
   </li>
 
     
@@ -618,67 +594,76 @@ client, which can be used in production environments. For this, each new functio
 documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.</p>
 <h2 id="getting-started">Getting started</h2>
 <p>First create an instance of the client with the access token of your Facebook page:</p>
-<pre><code class="python">from fbotics import Client
-client = Client(page_access_token=&quot;EAAHIhFHZCIQIBAAme5oAtHehYfrZCvyUZAMLABGEW8ZBmdZASYFp8wdhtbD3POKbT7m3yOnue9Y2JrYZAZBSVne0yHfdKKKfxrjL1aZB5nFCWVjBZA7BiZBNsMrVhSZCfqi4cB6CZCi2CUh41waGNlIc7gcFxAl421dqoNBUPD5ZAjxiHrAJmDRdYx8ATJRBkRqRhowMZD&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">page_access_token</span><span class="o">=</span><span class="s2">&quot;EAAHIhFHZCIQIBAAme5oAtHehYfrZCvyUZAMLABGEW8ZBmdZASYFp8wdhtbD3POKbT7m3yOnue9Y2JrYZAZBSVne0yHfdKKKfxrjL1aZB5nFCWVjBZA7BiZBNsMrVhSZCfqi4cB6CZCi2CUh41waGNlIc7gcFxAl421dqoNBUPD5ZAjxiHrAJmDRdYx8ATJRBkRqRhowMZD&quot;</span><span class="p">)</span>
+</pre></div>
+
 
 <h4 id="sending-a-text-message">Sending a Text Message</h4>
-<pre><code class="python">client.send_message(recipient_id=&quot;2157136727638083&quot;, text=&quot;hello world!&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="s2">&quot;2157136727638083&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+
 
 <p><img alt="TextMessagey" src="http://i65.tinypic.com/20f95q1.png" /></p>
 <h4 id="sending-quick-replies">Sending Quick Replies</h4>
-<pre><code class="python">from fbotics.models.quick_reply import QuickReply
-qr1 = QuickReply({&quot;content_type&quot;: &quot;text&quot;,
-                  &quot;title&quot;: &quot;Yes&quot;,
-                  &quot;payload&quot;: &quot;payload1&quot;,
-                  &quot;image_url&quot;: &quot;http://i64.tinypic.com/1hothh.png&quot;})
-qr2 = QuickReply({&quot;content_type&quot;: &quot;text&quot;,
-                  &quot;title&quot;: &quot;No&quot;,
-                  &quot;payload&quot;: &quot;payload2&quot;,
-                  &quot;image_url&quot;: &quot;http://i63.tinypic.com/2pqpbth.png&quot;})
-quick_replies = [qr1, qr2]
-response = client.send_message(
-        recipient_id=2157136727638083,
-        text=&quot;Text Message with Quick Replies&quot;,
-        quick_replies=quick_replies)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics.models.quick_reply</span> <span class="kn">import</span> <span class="n">QuickReply</span>
+<span class="n">qr1</span> <span class="o">=</span> <span class="n">QuickReply</span><span class="p">({</span><span class="s2">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Yes&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;payload&quot;</span><span class="p">:</span> <span class="s2">&quot;payload1&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;image_url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://i64.tinypic.com/1hothh.png&quot;</span><span class="p">})</span>
+<span class="n">qr2</span> <span class="o">=</span> <span class="n">QuickReply</span><span class="p">({</span><span class="s2">&quot;content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;payload&quot;</span><span class="p">:</span> <span class="s2">&quot;payload2&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;image_url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://i63.tinypic.com/2pqpbth.png&quot;</span><span class="p">})</span>
+<span class="n">quick_replies</span> <span class="o">=</span> <span class="p">[</span><span class="n">qr1</span><span class="p">,</span> <span class="n">qr2</span><span class="p">]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+        <span class="n">recipient_id</span><span class="o">=</span><span class="mi">2157136727638083</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Text Message with Quick Replies&quot;</span><span class="p">,</span>
+        <span class="n">quick_replies</span><span class="o">=</span><span class="n">quick_replies</span><span class="p">)</span>
+</pre></div>
+
 
 <p><img alt="QuickReply" src="http://i64.tinypic.com/33myeyu.png" /></p>
 <h2 id="installation">Installation</h2>
 <p>You can install the latest version of FBotics using pip:</p>
-<pre><code class="sh">pip install fbotics
-</code></pre>
+<div class="codehilite"><pre><span></span>pip install fbotics
+</pre></div>
+
 
 <p>You can also install FBotics from GitHub source:</p>
 <p>First, clone FBotics using <code>git</code>:</p>
-<pre><code class="sh">git clone git@github.com:pasmod/fbotics.git
-</code></pre>
+<div class="codehilite"><pre><span></span>git clone git@github.com:pasmod/fbotics.git
+</pre></div>
+
 
 <p>Then, <code>cd</code> to the project folder and run the install command:</p>
-<pre><code class="sh">cd fbotics
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> fbotics
 pip install .
-</code></pre>
+</pre></div>
+
 
 <h2 id="development-testing">Development &amp; Testing</h2>
 <p>Before developing FBotics further, please install Docker. For building the Docker image and installing all dependencies
 of FBotics, run:</p>
-<pre><code class="sh">cd fbotics
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> fbotics
 make build
-</code></pre>
+</pre></div>
+
 
 <p>Then execute the following command to run all the components required to work on FBotics:</p>
-<pre><code class="sh">cd fbotics
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> fbotics
 make up
-</code></pre>
+</pre></div>
+
 
 <p>To execute the tests:</p>
-<pre><code class="sh">make test
-</code></pre>
+<div class="codehilite"><pre><span></span>make <span class="nb">test</span>
+</pre></div>
+
 
 <p>To create coverage report:</p>
-<pre><code class="sh">make coverage
-</code></pre>
+<div class="codehilite"><pre><span></span>make coverage
+</pre></div>
                 
                   
                 
