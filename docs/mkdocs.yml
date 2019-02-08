@@ -20,7 +20,7 @@ nav:
 - Quick Replies:
   - Quick Reply: quick_replies/quick_replies.md
   - Example: quick_replies/example.md
-- Buttons: buttons.md
+- Buttons: buttons/buttons.md
 - Button Template:
   - Template Payload: _templates/button_template/button_template.md
   - Example: _templates/button_template/example.md
