@@ -12,6 +12,7 @@ codecov==2.0.15
 # Documentation
 mkdocs==1.0.4
 mkdocs-material
+pygments
 
 # Packaging
 twine==1.12.1
