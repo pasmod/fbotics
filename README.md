@@ -16,41 +16,18 @@ attachments, structured message templates, sender actions, and more. The goal of
 client, which can be used in production environments. For this, each new functionality added will be fully tested and
 documented. Currently this project is under development and offers a limited set of features of the Facebook Send API.
 
-## Getting started
+## Features
+FBotics currently supports sending following message types:
 
-First create an instance of the client with the access token of your Facebook page:
-```python
-from fbotics import Client
-client = Client(page_access_token="EAAHIhFHZCIQIBAAme5oAtHehYfrZCvyUZAMLABGEW8ZBmdZASYFp8wdhtbD3POKbT7m3yOnue9Y2JrYZAZBSVne0yHfdKKKfxrjL1aZB5nFCWVjBZA7BiZBNsMrVhSZCfqi4cB6CZCi2CUh41waGNlIc7gcFxAl421dqoNBUPD5ZAjxiHrAJmDRdYx8ATJRBkRqRhowMZD")
-```
-
-#### Sending a Text Message
-```python
-client.send_message(recipient_id="2157136727638083", text="hello world!")
-```
-
-![TextMessagey](http://i65.tinypic.com/20f95q1.png)
-
-#### Sending Quick Replies
-```python
-from fbotics.models.quick_reply import QuickReply
-qr1 = QuickReply({"content_type": "text",
-                  "title": "Yes",
-                  "payload": "payload1",
-                  "image_url": "http://i64.tinypic.com/1hothh.png"})
-qr2 = QuickReply({"content_type": "text",
-                  "title": "No",
-                  "payload": "payload2",
-                  "image_url": "http://i63.tinypic.com/2pqpbth.png"})
-quick_replies = [qr1, qr2]
-response = client.send_message(
-        recipient_id=2157136727638083,
-        text="Text Message with Quick Replies",
-        quick_replies=quick_replies)
-```
-
-![QuickReply](http://i64.tinypic.com/33myeyu.png)
-
+- Quick Replies
+- Buttons
+    - Call Button
+    - Postback Button
+    - URL Button
+- Templates
+    - Button Template
+    - Generic Template
+    
 ## Installation
 
 You can install the latest version of FBotics using pip:
@@ -100,4 +77,3 @@ To create coverage report:
 ```sh
 make coverage
 ```
-
