@@ -11,19 +11,12 @@ dev_addr: '0.0.0.0:8000'
 
 nav:
 - Home: index.md
-- Send API:
-  - Client: send/client.md
-  - Request: send/request.md
-  - Recipient: send/recipient.md
-  - Message: send/message.md
-  - Attachment: send/attachment.md
+- Client: client/client.md
 - Quick Replies:
   - Quick Reply: quick_replies/quick_replies.md
   - Example: quick_replies/example.md
 - Buttons: buttons/buttons.md
-- Button Template:
-  - Template Payload: button_template/button_template.md
-  - Example: button_template/example.md
+- Button Template: button_template/examples.md
 - Generic Template:
   - Template Payload: generic_template/generic_template.md
   - Example: generic_template/example.md

@@ -15,5 +15,6 @@ class RichMediaPayload(Model):
             RichMediaPayload(dict(url="https://petersfancybrownhats.com/company_image.png"))
         ```
     """
+
     url = StringType(required=False)
     is_reusable = BooleanType(required=False, serialize_when_none=False)

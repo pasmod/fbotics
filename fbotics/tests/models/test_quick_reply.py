@@ -16,7 +16,8 @@ def test_validation_when_content_type_is_text_and_title_does_not_exist(client):
 
 
 def test_validation_when_content_type_is_text_and_image_url_is_set_but_payload_is_not_set(
-        client):
+    client
+):
     """
     GIVEN a QuickReply object with a text content type and an image url, but without a payload
     WHEN validating the object
@@ -28,7 +29,8 @@ def test_validation_when_content_type_is_text_and_image_url_is_set_but_payload_i
 
 
 def test_validation_when_content_type_is_text_and_title_is_empty_and_image_url_is_not_set(
-        client):
+    client
+):
     """
     GIVEN a QuickReply object with a text content type and an empty title, but without an image_url
     WHEN validating the object

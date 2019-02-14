@@ -6,11 +6,11 @@ from fbotics.models.buttons import PostbackButton, WebUrlButton, CallButton
 
 def button_claim_function(field, data):
     print("data", data)
-    if 'url' in data:
+    if "url" in data:
         return WebUrlButton
-    if 'payload' in data and data.get("type") == "postback":
+    if "payload" in data and data.get("type") == "postback":
         return PostbackButton
-    if 'payload' in data and data.get("type") == "phone_number":
+    if "payload" in data and data.get("type") == "phone_number":
         return CallButton
     else:
         return None
@@ -26,9 +26,13 @@ class ButtonTemplatePayload(Model):
         sharable: Optional. Set to true to enable the native share button in Messenger for the template message. Defaults to false.
 
     """
-    template_type = StringType(required=True, default='button',
-                               choices=['button'])
+
+    template_type = StringType(required=True, default="button", choices=["button"])
     text = StringType(required=True, max_length=640)
-    buttons = ListType(PolyModelType(
-        [PostbackButton, WebUrlButton, CallButton], claim_function=button_claim_function))
+    buttons = ListType(
+        PolyModelType(
+            [PostbackButton, WebUrlButton, CallButton],
+            claim_function=button_claim_function,
+        )
+    )
     sharable = BooleanType(default=False)

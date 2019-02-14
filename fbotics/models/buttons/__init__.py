@@ -19,11 +19,12 @@ class WebUrlButton(Model):
         ```
         ![WebUrlButton](https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/17531046_119179685297959_5232300000901332992_n.png?_nc_cat=108&_nc_ht=scontent-frx5-1.xx&oh=bdbdcdee9438decf565412855582046c&oe=5CB66C96)
     """
+
     type = StringType(required=True, default="web_url", choices=["web_url"])
     title = StringType(required=True, max_length=20)
     webview_height_ratio = StringType(
-        required=False, default="full", choices=[
-            "compact", "tall", "full"])
+        required=False, default="full", choices=["compact", "tall", "full"]
+    )
     url = StringType()
 
 
@@ -45,6 +46,7 @@ class CallButton(Model):
             <img src="https://scontent-frx5-1.xx.fbcdn.net/v/t39.2365-6/23083335_129855331000571_3474293560784715776_n.png?_nc_cat=111&_nc_ht=scontent-frx5-1.xx&oh=e2a2a30b526f8c8046de6afa42629d35&oe=5CCCF01F" width="30%" />
         </p>
     """
+
     type = StringType(default="phone_number", choices=["phone_number"])
     title = StringType(required=True, max_length=20)
     payload = StringType()
@@ -64,6 +66,7 @@ class PostbackButton(Model):
             PostbackButton(dict(title="Select Product", payload="a4f8#4k3"))
         ```
     """
+
     type = StringType(default="postback", choices=["postback"])
     title = StringType(required=True, max_length=20)
     payload = StringType(required=True, max_length=1000)

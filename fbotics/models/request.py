@@ -17,13 +17,10 @@ class Request(Model):
         tag: Optional. The message tag string.
 
     """
+
     messaging_type = StringType(
-        required=True,
-        choices=[
-            "RESPONSE",
-            "MESSAGE_TAG",
-            "UPDATE"],
-        default="RESPONSE")
+        required=True, choices=["RESPONSE", "MESSAGE_TAG", "UPDATE"], default="RESPONSE"
+    )
     tag = StringType(
         required=False,
         choices=[
@@ -43,12 +40,15 @@ class Request(Model):
             "GAME_EVENT",
             "TRANSPORTATION_UPDATE",
             "FEATURE_FUNCTIONALITY_UPDATE",
-            "TICKET_UPDATE"])
+            "TICKET_UPDATE",
+        ],
+    )
     recipient = ModelType(Recipient)
     message = ModelType(Message)
 
     def validate_messaging_type(self, data, value):
         if data["tag"] and data["messaging_type"] != "MESSAGE_TAG":
             raise ValidationError(
-                "Messaging type should be MESSAGE_TAG for tagged messages")
+                "Messaging type should be MESSAGE_TAG for tagged messages"
+            )
         return value

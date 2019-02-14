@@ -6,9 +6,9 @@ from fbotics.models.buttons import PostbackButton, WebUrlButton
 
 
 def button_claim_function(field, data):
-    if 'url' in data:
+    if "url" in data:
         return WebUrlButton
-    if 'payload' in data:
+    if "payload" in data:
         return PostbackButton
     else:
         return None
@@ -23,10 +23,11 @@ class GenericDefaultAction(Model):
         webview_height_ratio: Optional. Height of the Webview. Valid values: compact, tall, full. Defaults to full.
 
     """
+
     type = StringType(required=True, default="web_url", choices=["web_url"])
     webview_height_ratio = StringType(
-        required=False, default="full", choices=[
-            "compact", "tall", "full"])
+        required=False, default="full", choices=["compact", "tall", "full"]
+    )
     url = StringType()
 
 
@@ -41,12 +42,17 @@ class GenericElement(Model):
         buttons: Optional. An array of buttons to append to the template. A maximum of 3 buttons per element is supported.
 
     """
+
     title = StringType(required=True, max_length=80)
     image_url = StringType(required=False, max_length=80)
     subtitle = StringType(required=False)
     default_action = ModelType(GenericDefaultAction, required=False)
-    buttons = ListType(PolyModelType(
-        [PostbackButton, WebUrlButton], claim_function=button_claim_function), max_size=3)
+    buttons = ListType(
+        PolyModelType(
+            [PostbackButton, WebUrlButton], claim_function=button_claim_function
+        ),
+        max_size=3,
+    )
 
 
 class GenericTemplatePayload(Model):
@@ -58,7 +64,7 @@ class GenericTemplatePayload(Model):
         elements: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.
 
     """
-    template_type = StringType(required=False, default='generic',
-                               choices=['generic'])
+
+    template_type = StringType(required=False, default="generic", choices=["generic"])
     sharable = BooleanType(default=False)
     elements = ListType(ModelType(GenericElement), max_size=10)

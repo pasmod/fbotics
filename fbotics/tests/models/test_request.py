@@ -12,8 +12,9 @@ def test_if_supported_tags_are_valid(client):
     """
     r = Request()
     actual = r.fields["tag"].choices
-    expected = [entry["tag"]
-                for entry in client.retrieve_supported_tags().json()["data"]]
+    expected = [
+        entry["tag"] for entry in client.retrieve_supported_tags().json()["data"]
+    ]
     assert set(actual) == set(expected)
 
 

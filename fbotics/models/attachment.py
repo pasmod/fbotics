@@ -8,11 +8,11 @@ from fbotics.models.payloads.rich_media import RichMediaPayload
 
 
 def payload_claim_function(field, data):
-    if 'url' in data and field.name == 'payload':
+    if "url" in data and field.name == "payload":
         return RichMediaPayload
-    if 'elements' in data and field.name == 'payload':
+    if "elements" in data and field.name == "payload":
         return GenericTemplatePayload
-    if 'text' in data and field.name == 'payload':
+    if "text" in data and field.name == "payload":
         return ButtonTemplatePayload
     else:
         return None
@@ -26,15 +26,11 @@ class Attachment(Model):
         payload: Payload of attachment
 
     """
+
     type = StringType(
-        required=True,
-        choices=[
-            "image",
-            "audio",
-            "video",
-            "file",
-            "template"])
-    payload = PolyModelType([RichMediaPayload,
-                             GenericTemplatePayload,
-                             ButtonTemplatePayload],
-                            claim_function=payload_claim_function)
+        required=True, choices=["image", "audio", "video", "file", "template"]
+    )
+    payload = PolyModelType(
+        [RichMediaPayload, GenericTemplatePayload, ButtonTemplatePayload],
+        claim_function=payload_claim_function,
+    )

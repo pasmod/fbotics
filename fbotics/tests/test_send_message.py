@@ -1,6 +1,6 @@
 import pytest
 
-from fbotics import OAuthException
+from fbotics.client import OAuthException
 from fbotics.models.attachment import Attachment
 from fbotics.models.buttons import WebUrlButton, CallButton
 from fbotics.models.payloads.button_template import ButtonTemplatePayload
@@ -20,7 +20,7 @@ def test_status_code_when_sending_text_message_to_valid_recipient(client, recipi
     WHEN a text message is sent to the recipient
     THEN the status code of the response is 200
     """
-    response = client.send_message(recipient_id=recipient_id, text="foo")
+    response = client.send(recipient_id=recipient_id, text="foo")
     assert response.status_code == 200
 
 
@@ -32,7 +32,7 @@ def test_exception_when_sending_text_message_to_invalid_recipient(client):
     """
     invalid_recipient_id = 1234
     with pytest.raises(OAuthException):
-        client.send_message(recipient_id=invalid_recipient_id, text="foo")
+        client.send(recipient_id=invalid_recipient_id, text="foo")
 
 
 def test_response_content_when_sending_text_message_to_valid_recipient(
@@ -43,7 +43,7 @@ def test_response_content_when_sending_text_message_to_valid_recipient(
     WHEN a text message is sent to the recipient
     THEN the status code of the response is 200
     """
-    response = client.send_message(recipient_id=recipient_id, text="foo")
+    response = client.send(recipient_id=recipient_id, text="foo")
     assert response.json() == {
         "recipient_id": "2157136727638083",
         "message_id": ANY(str),
@@ -75,7 +75,7 @@ def test_sending_text_message_with_quick_replies_to_valid_recipient(
         )
     )
     quick_replies = [qr1, qr2]
-    response = client.send_message(
+    response = client.send(
         recipient_id=recipient_id, text="foo", quick_replies=quick_replies
     )
     assert response.status_code == 200
@@ -95,7 +95,7 @@ def test_sending_attachment_with_image_url_to_valid_recipient(client, recipient_
             ).to_primitive(),
         )
     )
-    response = client.send_message(recipient_id=recipient_id, attachment=attachment)
+    response = client.send(recipient_id=recipient_id, attachment=attachment)
     assert response.status_code == 200
 
 
@@ -113,7 +113,7 @@ def test_sending_attachment_with_audio_url_to_valid_recipient(client, recipient_
             ).to_primitive(),
         )
     )
-    response = client.send_message(recipient_id=recipient_id, attachment=attachment)
+    response = client.send(recipient_id=recipient_id, attachment=attachment)
     assert response.status_code == 200
 
 
@@ -131,7 +131,7 @@ def test_sending_attachment_with_file_url_to_valid_recipient(client, recipient_i
             ).to_primitive(),
         )
     )
-    response = client.send_message(recipient_id=recipient_id, attachment=attachment)
+    response = client.send(recipient_id=recipient_id, attachment=attachment)
     assert response.status_code == 200
 
 
@@ -164,7 +164,7 @@ def test_sending_generic_template__to_valid_recipient(client, recipient_id):
         dict(template_type="generic", elements=[ge])
     ).to_primitive()
     attachment = Attachment(dict(type="template", payload=generic_template_payload))
-    response = client.send_message(recipient_id=recipient_id, attachment=attachment)
+    response = client.send(recipient_id=recipient_id, attachment=attachment)
     assert response.status_code == 200
 
 
@@ -188,5 +188,5 @@ def test_sending_button_template_to_valid_recipient(client, recipient_id):
         )
     ).to_primitive()
     attachment = Attachment(dict(type="template", payload=button_template_payload))
-    response = client.send_message(recipient_id=recipient_id, attachment=attachment)
+    response = client.send(recipient_id=recipient_id, attachment=attachment)
     assert response.status_code == 200
