@@ -6,27 +6,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://pasmod.github.io/fbotics/send/client/</loc>
-     <lastmod>2019-02-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://pasmod.github.io/fbotics/send/request/</loc>
-     <lastmod>2019-02-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://pasmod.github.io/fbotics/send/recipient/</loc>
-     <lastmod>2019-02-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://pasmod.github.io/fbotics/send/message/</loc>
-     <lastmod>2019-02-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://pasmod.github.io/fbotics/send/attachment/</loc>
+     <loc>https://pasmod.github.io/fbotics/client/client/</loc>
      <lastmod>2019-02-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -46,12 +26,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://pasmod.github.io/fbotics/button_template/button_template/</loc>
-     <lastmod>2019-02-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://pasmod.github.io/fbotics/button_template/example/</loc>
+     <loc>https://pasmod.github.io/fbotics/button_template/examples/</loc>
      <lastmod>2019-02-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
