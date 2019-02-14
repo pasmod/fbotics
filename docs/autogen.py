@@ -80,7 +80,7 @@ def get_function_signature(function, method=True):
         args = args[: -len(defaults)]
     else:
         kwargs = []
-    st = "%s.%s(" % (clean_module_name(function.__module__), function.__name__)
+    st = "%s.%s(" % (function.__module__, function.__name__)
 
     for a in args:
         st += str(a) + ", "
@@ -92,7 +92,7 @@ def get_function_signature(function, method=True):
         signature = st[:-2] + ")"
     else:
         signature = st + ")"
-    return post_process_signature(signature)
+    return signature
 
 
 def get_class_signature(cls):
@@ -102,44 +102,18 @@ def get_class_signature(cls):
     for k, v in class_attr_value_dict.items():
         signature += str(k) + "=" + str(v) + ", "
     signature = signature[:-2] + ")"
-    # try:
-    #    class_signature = get_function_signature(cls.__init__)
-    #    class_signature = class_signature.replace('__init__', cls.__name__)
-    # except (TypeError, AttributeError):
-    #    # in case the class inherits from object and does not
-    #    # define __init__
-    #    class_signature = "{clean_module_name}.{cls_name}()".format(
-    #        clean_module_name=clean_module_name(cls.__module__),
-    #        cls_name=cls.__name__
-    #    )
-    return post_process_signature(signature)
-
-
-def post_process_signature(signature):
-    parts = re.split(r"\.(?!\d)", signature)
-    if len(parts) >= 4:
-        if parts[1] == "layers":
-            signature = "keras.layers." + ".".join(parts[3:])
-        if parts[1] == "utils":
-            signature = "keras.utils." + ".".join(parts[3:])
-        if parts[1] == "backend":
-            signature = "keras.backend." + ".".join(parts[3:])
     return signature
 
 
-def clean_module_name(name):
-    return name
-
-
 def class_to_docs_link(cls):
-    module_name = clean_module_name(cls.__module__)
+    module_name = cls.__module__
     module_name = module_name[6:]
     link = ROOT + module_name.replace(".", "/") + "#" + cls.__name__.lower()
     return link
 
 
 def class_to_source_link(cls):
-    module_name = clean_module_name(cls.__module__)
+    module_name = cls.__module__
     path = module_name.replace(".", "/")
     path += ".py"
     line = inspect.getsourcelines(cls)[-1]
@@ -356,7 +330,7 @@ def render_function(function, method=True):
     subblocks = []
     signature = get_function_signature(function, method=method)
     if method:
-        signature = signature.replace(clean_module_name(function.__module__) + ".", "")
+        signature = signature.replace(function.__module__ + ".", "")
     subblocks.append("### " + function.__name__ + "\n")
     subblocks.append(code_snippet(signature))
     docstring = function.__doc__
