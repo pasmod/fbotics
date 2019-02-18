@@ -9,11 +9,6 @@ class RichMediaPayload(Model):
         url: The turl of the asset.
         is_reusable: Attachments that were uploaded with the is_reusable property set to true can be sent to other message recipients.
 
-    # Examples
-        ```python
-            from fbotics.models.payloads.rich_media import RichMediaPayload
-            RichMediaPayload(dict(url="https://petersfancybrownhats.com/company_image.png"))
-        ```
     """
 
     url = StringType(required=False)

@@ -13,6 +13,7 @@ nav:
 - Home: index.md
 - Client: client/client.md
 - Text Message: text/example.md
+- Rich Media: rich_media/example.md
 - Quick Replies:
   - Quick Reply: quick_replies/quick_replies.md
   - Example: quick_replies/example.md
