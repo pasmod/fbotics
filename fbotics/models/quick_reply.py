@@ -29,9 +29,9 @@ class QuickReply(Model):
         if data["content_type"] == "text" and not data["title"]:
             raise ValidationError("Field title is required when content_type is text")
         if (
-            data["content_type"] == "text"
-            and data["image_url"]
-            and not data.get("payload", "")
+                data["content_type"] == "text"
+                and data["image_url"]
+                and not data.get("payload", "")
         ):
             raise ValidationError(
                 "When content_type is text and image_url is set, payload should be set to at least an empty string."

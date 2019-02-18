@@ -1,6 +1,6 @@
 import pytest
 
-from fbotics.client import OAuthException
+from fbotics.client.exceptions import OAuthException
 from fbotics.models.attachment import Attachment
 from fbotics.models.buttons import WebUrlButton, CallButton
 from fbotics.models.payloads.button_template import ButtonTemplatePayload
@@ -36,7 +36,7 @@ def test_exception_when_sending_text_message_to_invalid_recipient(client):
 
 
 def test_response_content_when_sending_text_message_to_valid_recipient(
-    client, recipient_id
+        client, recipient_id
 ):
     """
     GIVEN a client and a recipient id
@@ -51,7 +51,7 @@ def test_response_content_when_sending_text_message_to_valid_recipient(
 
 
 def test_sending_text_message_with_quick_replies_to_valid_recipient(
-    client, recipient_id
+        client, recipient_id
 ):
     """
     GIVEN a client and a recipient id
