@@ -41,7 +41,7 @@ class Client(object):
         )
         attachment = Attachment(dict(type="template", payload=button_template_payload))
         message = Message({"quick_replies": quick_replies, "attachment": attachment})
-        response = self.post(message, recipient_id, user_ref, phone_number)
+        response = self._post(message, recipient_id, user_ref, phone_number)
         return response
 
     def send_generic_template(
@@ -52,7 +52,7 @@ class Client(object):
             elements=None,
             quick_replies=None,
     ):
-        """Sends a button template to the recipient.
+        """Sends a generic template to the recipient.
 
         # Arguments
             recipient_id: page specific id of the recipient
@@ -69,7 +69,32 @@ class Client(object):
         attachment = Attachment(dict(type="template", payload=generic_template_payload))
         message = Message({"quick_replies": quick_replies, "attachment": attachment})
 
-        response = self.post(message, recipient_id, user_ref, phone_number)
+        response = self._post(message, recipient_id, user_ref, phone_number)
+        return response
+
+    def send_quick_replies(
+            self,
+            recipient_id=None,
+            user_ref=None,
+            phone_number=None,
+            text=None,
+            quick_replies=None
+    ):
+        """Sends quick replies to the recipient.
+
+        # Arguments
+            recipient_id: page specific id of the recipient
+            user_ref: Optional. user_ref from the checkbox plugin
+            phone_number: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.
+            text: must be UTF-8 and has a 2000 character limit.
+            quick_replies: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.
+
+
+        """
+
+        message = Message({"text": text, "quick_replies": quick_replies})
+
+        response = self._post(message, recipient_id, user_ref, phone_number)
         return response
 
     def send(
@@ -119,10 +144,10 @@ class Client(object):
             {"text": text, "quick_replies": quick_replies, "attachment": attachment}
         )
 
-        response = self.post(message, recipient_id, user_ref, phone_number)
+        response = self._post(message, recipient_id, user_ref, phone_number)
         return response
 
-    def post(self, message, recipient_id=None, user_ref=None, phone_number=None):
+    def _post(self, message, recipient_id=None, user_ref=None, phone_number=None):
         recipient = Recipient(
             {"id": recipient_id, "user_ref": user_ref, "phone_number": phone_number}
         )
