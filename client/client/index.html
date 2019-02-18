@@ -217,6 +217,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send_text" title="send_text" class="md-nav__link">
+    send_text
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_audio" title="send_audio" class="md-nav__link">
+    send_audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_image" title="send_image" class="md-nav__link">
+    send_image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_file" title="send_file" class="md-nav__link">
+    send_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_generic_template" title="send_generic_template" class="md-nav__link">
+    send_generic_template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_quick_replies" title="send_quick_replies" class="md-nav__link">
+    send_quick_replies
+  </a>
+  
+</li>
+      
       
       
       
@@ -233,15 +275,39 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../text/example/" title="Text Message" class="md-nav__link">
+      Text Message
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../rich_media/example/" title="Rich Media" class="md-nav__link">
+      Rich Media
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-5">
       Quick Replies
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-5">
         Quick Replies
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -307,13 +373,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-8">
       Generic Template
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-8">
         Generic Template
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -373,6 +439,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send_text" title="send_text" class="md-nav__link">
+    send_text
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_audio" title="send_audio" class="md-nav__link">
+    send_audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_image" title="send_image" class="md-nav__link">
+    send_image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_file" title="send_file" class="md-nav__link">
+    send_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_generic_template" title="send_generic_template" class="md-nav__link">
+    send_generic_template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send_quick_replies" title="send_quick_replies" class="md-nav__link">
+    send_quick_replies
+  </a>
+  
+</li>
+      
       
       
       
@@ -414,6 +522,92 @@
 <li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
 <li><strong>buttons</strong>: Set of 1-3 buttons that appear as call-to-actions.</li>
 </ul>
+<hr />
+<h3 id="send_text">send_text</h3>
+<div class="codehilite"><pre><span></span><span class="n">send_text</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sends a text message to the recipient.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
+<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
+<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
+<li><strong>text</strong>: must be UTF-8 and has a 2000 character limit.</li>
+</ul>
+<hr />
+<h3 id="send_audio">send_audio</h3>
+<div class="codehilite"><pre><span></span><span class="n">send_audio</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sends an audio to the recipient.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
+<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
+<li><strong>url</strong>: URL of the audio</li>
+<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+</ul>
+<hr />
+<h3 id="send_image">send_image</h3>
+<div class="codehilite"><pre><span></span><span class="n">send_image</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sends an image to the recipient.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
+<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
+<li><strong>url</strong>: URL of the image</li>
+<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+</ul>
+<hr />
+<h3 id="send_file">send_file</h3>
+<div class="codehilite"><pre><span></span><span class="n">send_file</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sends a file to the recipient.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
+<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
+<li><strong>url</strong>: URL of the file</li>
+<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+</ul>
+<hr />
+<h3 id="send_generic_template">send_generic_template</h3>
+<div class="codehilite"><pre><span></span><span class="n">send_generic_template</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sends a generic template to the recipient.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
+<li><strong>user_ref</strong>: optional. user_ref from the checkbox plugin</li>
+<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
+<li><strong>elements</strong>: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</li>
+<li><strong>buttons</strong>: Set of 1-3 buttons that appear as call-to-actions.</li>
+</ul>
+<hr />
+<h3 id="send_quick_replies">send_quick_replies</h3>
+<div class="codehilite"><pre><span></span><span class="n">send_quick_replies</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Sends quick replies to the recipient.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>recipient_id</strong>: page specific id of the recipient</li>
+<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
+<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
+<li><strong>text</strong>: must be UTF-8 and has a 2000 character limit.</li>
+<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+</ul>
                 
                   
                 
@@ -449,13 +643,13 @@
           </a>
         
         
-          <a href="../../quick_replies/quick_replies/" title="Quick Reply" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../text/example/" title="Text Message" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Quick Reply
+                Text Message
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

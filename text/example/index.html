@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for FBotics, the Python Client for Facebook Send API">
       
       
-        <link rel="canonical" href="https://pasmod.github.io/fbotics/button_template/examples/">
+        <link rel="canonical" href="https://pasmod.github.io/fbotics/text/example/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>Button Template - FBotics Documentation</title>
+        <title>Text Message - FBotics Documentation</title>
       
     
     
@@ -101,7 +101,7 @@
                 FBotics Documentation
               </span>
               <span class="md-header-nav__topic">
-                Button Template
+                Text Message
               </span>
             
           
@@ -194,11 +194,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../text/example/" title="Text Message" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Text Message" class="md-nav__link md-nav__link--active">
       Text Message
     </a>
+    
   </li>
 
     
@@ -278,18 +285,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Button Template" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../button_template/examples/" title="Button Template" class="md-nav__link">
       Button Template
     </a>
-    
   </li>
 
     
@@ -354,42 +354,16 @@
               
                 
                 
-                  <h1>Button Template</h1>
+                  <h1>Text Message</h1>
                 
-                <p>The button template allows you to send a structured message that includes text and buttons. This is an example to send Button Templates using FBotics:</p>
+                <p>This is an example to send text messages using FBotics:</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics.client</span> <span class="kn">import</span> <span class="n">Client</span>
-<span class="kn">from</span> <span class="nn">fbotics.models.buttons</span> <span class="kn">import</span> <span class="n">WebUrlButton</span><span class="p">,</span> <span class="n">CallButton</span>
 <span class="kn">from</span> <span class="nn">fbotics.models.quick_reply</span> <span class="kn">import</span> <span class="n">QuickReply</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">page_access_token</span><span class="o">=</span><span class="n">PAGE_ACCESS_TOKEN</span><span class="p">)</span>
 
-<span class="n">button1</span> <span class="o">=</span> <span class="n">WebUrlButton</span><span class="p">(</span>
-    <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;web_url&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://www.google.com&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Get Order Status&quot;</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">button2</span> <span class="o">=</span> <span class="n">CallButton</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;phone_number&quot;</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;+15105551234&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Call Me&quot;</span><span class="p">))</span>
-
-<span class="n">qr1</span> <span class="o">=</span> <span class="n">QuickReply</span><span class="p">(</span>
-    <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span>
-        <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;payload1&quot;</span><span class="p">,</span>
-        <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;http://i64.tinypic.com/1hothh.png&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">qr2</span> <span class="o">=</span> <span class="n">QuickReply</span><span class="p">(</span>
-    <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
-        <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;payload2&quot;</span><span class="p">,</span>
-        <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;http://i63.tinypic.com/2pqpbth.png&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">client</span><span class="o">.</span><span class="n">send_button_template</span><span class="p">(</span>
-    <span class="n">recipient_id</span><span class="o">=</span><span class="n">RECIPIENT_ID</span><span class="p">,</span>
-    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span>
-    <span class="n">quick_replies</span><span class="o">=</span><span class="p">[</span><span class="n">qr1</span><span class="p">,</span> <span class="n">qr2</span><span class="p">],</span>
-    <span class="n">buttons</span><span class="o">=</span><span class="p">[</span><span class="n">button1</span><span class="p">,</span> <span class="n">button2</span><span class="p">],</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">send_text</span><span class="p">(</span>
+    <span class="n">recipient_id</span><span class="o">=</span><span class="n">RECIPIENT_ID</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;hello world&quot;</span>
 <span class="p">)</span>
 </pre></div>
                 
@@ -412,7 +386,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../buttons/buttons/" title="Buttons" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../client/client/" title="Client" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -421,19 +395,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Buttons
+                Client
               </span>
             </div>
           </a>
         
         
-          <a href="../../generic_template/generic_template/" title="Template Payload" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../rich_media/example/" title="Rich Media" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Template Payload
+                Rich Media
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

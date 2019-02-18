@@ -199,15 +199,39 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../text/example/" title="Text Message" class="md-nav__link">
+      Text Message
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../rich_media/example/" title="Rich Media" class="md-nav__link">
+      Rich Media
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-5">
       Quick Replies
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-5">
         Quick Replies
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -275,13 +299,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-8">
       Generic Template
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-8">
         Generic Template
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -423,7 +447,7 @@
                   <h1>Template Payload</h1>
                 
                 <p>The generic template allows you to send a structured message that includes an image, text and buttons. A generic template with multiple templates described in the elements array will send a horizontally scrollable carousel of items, each composed of an image, text and buttons. </p>
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L52">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L58">[source]</a></span></p>
 <h3 id="generictemplatepayload">GenericTemplatePayload</h3>
 <div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericTemplatePayload</span><span class="p">(</span><span class="n">template_type</span><span class="o">=</span><span class="n">generic</span><span class="p">,</span> <span class="n">sharable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -437,7 +461,7 @@
 <li><strong>elements</strong>: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L33">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L34">[source]</a></span></p>
 <h3 id="genericelement">GenericElement</h3>
 <div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericElement</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">default_action</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
