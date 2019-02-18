@@ -12,6 +12,7 @@ dev_addr: '0.0.0.0:8000'
 nav:
 - Home: index.md
 - Client: client/client.md
+- Text Message: text/example.md
 - Quick Replies:
   - Quick Reply: quick_replies/quick_replies.md
   - Example: quick_replies/example.md
