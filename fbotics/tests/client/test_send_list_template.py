@@ -1,12 +1,12 @@
 from fbotics.models.buttons import WebUrlButton
-from fbotics.models.payloads.generic_template import Element
+from fbotics.models.payloads.element import Element
 from fbotics.models.quick_reply import QuickReply
 
 
-def test_send_generic_template_returns_200_status_code(client, recipient_id):
+def test_send_list_template_returns_200_status_code(client, recipient_id):
     """
     GIVEN a client and a recipient id
-    WHEN a generic template is sent to the recipient
+    WHEN a list template is sent to the recipient
     THEN the status code of the response is 200
     """
 
@@ -16,7 +16,16 @@ def test_send_generic_template_returns_200_status_code(client, recipient_id):
         )
     ]
 
-    ge = Element(
+    e1 = Element(
+        dict(
+            title="Title1",
+            image_url="http://i67.tinypic.com/262vb5l.jpg",
+            subtitle="Subtitle1",
+            buttons=buttons,
+        )
+    )
+
+    e2 = Element(
         dict(
             title="Title1",
             image_url="http://i67.tinypic.com/262vb5l.jpg",
@@ -33,6 +42,7 @@ def test_send_generic_template_returns_200_status_code(client, recipient_id):
             image_url="http://i64.tinypic.com/1hothh.png",
         )
     )
+
     qr2 = QuickReply(
         dict(
             content_type="text",
@@ -42,7 +52,7 @@ def test_send_generic_template_returns_200_status_code(client, recipient_id):
         )
     )
 
-    response = client.send_generic_template(
-        recipient_id=recipient_id, quick_replies=[qr1, qr2], elements=[ge]
+    response = client.send_list_template(
+        recipient_id=recipient_id, quick_replies=[qr1, qr2], elements=[e1, e2], buttons=buttons
     )
     assert response.status_code == 200

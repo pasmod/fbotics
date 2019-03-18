@@ -19,11 +19,15 @@ EXCLUDE = {}
 
 PAGES = [
     {
+        "page": "list_template/list_template.md",
+        "classes": [
+            fbotics.models.payloads.list_template.ListTemplatePayload,
+        ],
+    },
+    {
         "page": "generic_template/generic_template.md",
         "classes": [
             fbotics.models.payloads.generic_template.GenericTemplatePayload,
-            fbotics.models.payloads.generic_template.GenericElement,
-            fbotics.models.payloads.generic_template.GenericDefaultAction,
         ],
     },
     {

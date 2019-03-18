@@ -22,3 +22,6 @@ nav:
 - Generic Template:
   - Template Payload: generic_template/generic_template.md
   - Example: generic_template/example.md
+- List Template:
+  - Template Payload: list_template/list_template.md
+  - Example: list_template/example.md

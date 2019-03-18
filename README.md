@@ -27,6 +27,7 @@ FBotics currently supports sending following message types:
 - Templates
     - Button Template
     - Generic Template
+    - List Template
     
 ## Installation
 
