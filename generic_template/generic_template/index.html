@@ -346,20 +346,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#genericelement" title="GenericElement" class="md-nav__link">
-    GenericElement
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genericdefaultaction" title="GenericDefaultAction" class="md-nav__link">
-    GenericDefaultAction
-  </a>
-  
-</li>
-      
       
       
       
@@ -378,6 +364,54 @@
 
   <li class="md-nav__item">
     <a href="../example/" title="Example" class="md-nav__link">
+      Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      List Template
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        List Template
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../list_template/list_template/" title="Template Payload" class="md-nav__link">
+      Template Payload
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../list_template/example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -413,20 +447,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#genericelement" title="GenericElement" class="md-nav__link">
-    GenericElement
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#genericdefaultaction" title="GenericDefaultAction" class="md-nav__link">
-    GenericDefaultAction
-  </a>
-  
-</li>
-      
       
       
       
@@ -447,7 +467,7 @@
                   <h1>Template Payload</h1>
                 
                 <p>The generic template allows you to send a structured message that includes an image, text and buttons. A generic template with multiple templates described in the elements array will send a horizontally scrollable carousel of items, each composed of an image, text and buttons. </p>
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L58">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L17">[source]</a></span></p>
 <h3 id="generictemplatepayload">GenericTemplatePayload</h3>
 <div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericTemplatePayload</span><span class="p">(</span><span class="n">template_type</span><span class="o">=</span><span class="n">generic</span><span class="p">,</span> <span class="n">sharable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -459,36 +479,6 @@
 <li><strong>template_type</strong>: Value must be generic.</li>
 <li><strong>sharable</strong>: Optional. Set to true to enable the native share button in Messenger for the template message. Defaults to false.</li>
 <li><strong>elements</strong>: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</li>
-</ul>
-<hr />
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L34">[source]</a></span></p>
-<h3 id="genericelement">GenericElement</h3>
-<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericElement</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">default_action</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The generic template supports a maximum of 10 elements per message. At least one property must be set in addition to title.</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>title</strong>: The title to display in the template. 80 character limit.</li>
-<li><strong>subtitle</strong>: Optional. The subtitle to display in the template. 80 character limit.</li>
-<li><strong>image_url</strong>: Optional. The URL of the image to display in the template.</li>
-<li><strong>default_action</strong>: Optional. The default action executed when the template is tapped. Accepts the same properties as URL button, except title.</li>
-<li><strong>buttons</strong>: Optional. An array of buttons to append to the template. A maximum of 3 buttons per element is supported.</li>
-</ul>
-<hr />
-<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/generic_template.py#L17">[source]</a></span></p>
-<h3 id="genericdefaultaction">GenericDefaultAction</h3>
-<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">generic_template</span><span class="o">.</span><span class="n">GenericDefaultAction</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">web_url</span><span class="p">,</span> <span class="n">webview_height_ratio</span><span class="o">=</span><span class="n">full</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The default action executed when the template is tapped.</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>type</strong>: Type of button. Must be web_url.</li>
-<li><strong>url</strong>: This URL is opened in a mobile browser when the button is tapped. Must use HTTPS protocol if messenger_extensions is true.</li>
-<li><strong>webview_height_ratio</strong>: Optional. Height of the Webview. Valid values: compact, tall, full. Defaults to full.</li>
 </ul>
                 
                   
