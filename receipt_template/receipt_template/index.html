@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for FBotics, the Python Client for Facebook Send API">
       
       
-        <link rel="canonical" href="https://pasmod.github.io/fbotics/client/client/">
+        <link rel="canonical" href="https://pasmod.github.io/fbotics/receipt_template/receipt_template/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>Client - FBotics Documentation</title>
+        <title>Template Payload - FBotics Documentation</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#send_button_template" tabindex="1" class="md-skip">
+      <a href="#receipttemplatepayload" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
                 FBotics Documentation
               </span>
               <span class="md-header-nav__topic">
-                Client
+                Template Payload
               </span>
             
           
@@ -186,87 +186,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Client
-      </label>
-    
-    <a href="./" title="Client" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../client/client/" title="Client" class="md-nav__link">
       Client
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#send_button_template" title="send_button_template" class="md-nav__link">
-    send_button_template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_text" title="send_text" class="md-nav__link">
-    send_text
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_audio" title="send_audio" class="md-nav__link">
-    send_audio
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_image" title="send_image" class="md-nav__link">
-    send_image
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_file" title="send_file" class="md-nav__link">
-    send_file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_generic_template" title="send_generic_template" class="md-nav__link">
-    send_generic_template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_quick_replies" title="send_quick_replies" class="md-nav__link">
-    send_quick_replies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -466,10 +390,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       Receipt Template
@@ -485,11 +411,73 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../receipt_template/receipt_template/" title="Template Payload" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Template Payload
+      </label>
+    
+    <a href="./" title="Template Payload" class="md-nav__link md-nav__link--active">
       Template Payload
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#receipttemplatepayload" title="ReceiptTemplatePayload" class="md-nav__link">
+    ReceiptTemplatePayload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element" title="Element" class="md-nav__link">
+    Element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#address" title="Address" class="md-nav__link">
+    Address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjustment" title="Adjustment" class="md-nav__link">
+    Adjustment
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -499,7 +487,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../receipt_template/example/" title="Example" class="md-nav__link">
+    <a href="../example/" title="Example" class="md-nav__link">
       Example
     </a>
   </li>
@@ -529,50 +517,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#send_button_template" title="send_button_template" class="md-nav__link">
-    send_button_template
+  <a href="#receipttemplatepayload" title="ReceiptTemplatePayload" class="md-nav__link">
+    ReceiptTemplatePayload
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#send_text" title="send_text" class="md-nav__link">
-    send_text
+  <a href="#element" title="Element" class="md-nav__link">
+    Element
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#send_audio" title="send_audio" class="md-nav__link">
-    send_audio
+  <a href="#address" title="Address" class="md-nav__link">
+    Address
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#send_image" title="send_image" class="md-nav__link">
-    send_image
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#send_file" title="send_file" class="md-nav__link">
-    send_file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_generic_template" title="send_generic_template" class="md-nav__link">
-    send_generic_template
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#send_quick_replies" title="send_quick_replies" class="md-nav__link">
-    send_quick_replies
+  <a href="#adjustment" title="Adjustment" class="md-nav__link">
+    Adjustment
   </a>
   
 </li>
@@ -594,115 +568,92 @@
               
                 
                 
-                  <h1>Client</h1>
+                  <h1>Template Payload</h1>
                 
-                <p>In order to create an instance of the Client, a page access token is needed. </p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">fbotics.client</span> <span class="kn">import</span> <span class="n">Client</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">page_access_token</span><span class="o">=</span><span class="s2">&quot;PAGE_ACCESS_TOKEN&quot;</span><span class="p">)</span>
+                <p>The receipt template allows you to send an order confirmation as a structured message. The template may include an order summary, payment details, and shipping information.</p>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/receipt_template.py#L84">[source]</a></span></p>
+<h3 id="receipttemplatepayload">ReceiptTemplatePayload</h3>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">receipt_template</span><span class="o">.</span><span class="n">ReceiptTemplatePayload</span><span class="p">(</span><span class="n">template_type</span><span class="o">=</span><span class="n">receipt</span><span class="p">,</span> <span class="n">sharable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">recipient_name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">order_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">currency</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">payment_method</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">adjustments</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<h3 id="send_button_template">send_button_template</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_button_template</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">buttons</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Sends a button template to the recipient.</p>
+<p>The receipt template allows you to send an order confirmation as a structured message. The template may include an order summary, payment details, and shipping information.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: optional. user_ref from the checkbox plugin</li>
-<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
-<li><strong>text</strong>: UTF-8-encoded text of up to 640 characters. Text will appear above the buttons.</li>
-<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
-<li><strong>buttons</strong>: Set of 1-3 buttons that appear as call-to-actions.</li>
+<li><strong>template_type</strong>: Value must be receipt.</li>
+<li><strong>sharable</strong>: Optional. Set to true to enable the native share button in Messenger for the template message. Defaults to false.</li>
+<li><strong>recipient_nam</strong>: The recipient's name.</li>
+<li><strong>merchant_name</strong>: Optional. The merchant's name. If present this is shown as logo text.</li>
+<li><strong>order_number</strong>: The order number. Must be unique.</li>
+<li><strong>currency</strong>: The currency of the payment.</li>
+<li><strong>payment_method</strong>: The payment method used. Providing enough information for the customer to decipher which payment method and account they used is recommended. This can be a custom string, such as, "Visa 1234".</li>
+<li><strong>timestamp</strong>: Optional. Timestamp of the order in seconds.</li>
+<li><strong>elements</strong>: Optional. Array of a maximum of 100 element objects that describe items in the order. Sort order of the elements is not guaranteed.</li>
+<li><strong>address</strong>: Optional. The shipping address of the order.</li>
+<li><strong>summary</strong>: The payment summary. See summary.</li>
+<li><strong>adjustments</strong>: Optional. An array of payment objects that describe payment adjustments, such as discounts.</li>
 </ul>
 <hr />
-<h3 id="send_text">send_text</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_text</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/receipt_template.py#L12">[source]</a></span></p>
+<h3 id="element">Element</h3>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">receipt_template</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subtitle</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">currency</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_url</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Sends a text message to the recipient.</p>
+<p>Element objects that describe items in the order.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
-<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
-<li><strong>text</strong>: must be UTF-8 and has a 2000 character limit.</li>
+<li><strong>title</strong>: The name to display for the item.</li>
+<li><strong>subtitle</strong>: Optional. The subtitle for the item, usually a brief item description.</li>
+<li><strong>quantity</strong>: Optional. The quantity of the item purchased.</li>
+<li><strong>price</strong>: The price of the item. For free items, '0' is allowed.</li>
+<li><strong>currency</strong>: Optional. The currency of the item price.</li>
+<li><strong>image_url</strong>: Optional. The URL of an image to be displayed with the item.</li>
 </ul>
 <hr />
-<h3 id="send_audio">send_audio</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_audio</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/receipt_template.py#L33">[source]</a></span></p>
+<h3 id="address">Address</h3>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">receipt_template</span><span class="o">.</span><span class="n">Address</span><span class="p">(</span><span class="n">street_1</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">street_2</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">postal_code</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Sends an audio to the recipient.</p>
+<p>The shipping address of the order.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
-<li><strong>url</strong>: URL of the audio</li>
-<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+<li><strong>street_1</strong>: The street address, line 1.</li>
+<li><strong>street_2</strong>: Optional. The street address, line 2.</li>
+<li><strong>city</strong>: The city name of the address.</li>
+<li><strong>postal_code</strong>: The postal code of the address.</li>
+<li><strong>state</strong>: The state abbreviation for U.S. addresses, or the region/province for non-U.S. addresses.</li>
+<li><strong>country</strong>: The two-letter country abbreviation of the address.</li>
 </ul>
 <hr />
-<h3 id="send_image">send_image</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_image</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/receipt_template.py#L67">[source]</a></span></p>
+<h3 id="summary">Summary</h3>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">receipt_template</span><span class="o">.</span><span class="n">Summary</span><span class="p">(</span><span class="n">subtotal</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shipping_cost</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">total_tax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">total_cost</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Sends an image to the recipient.</p>
+<p>The property values of the summary object should be valid, well-formatted decimal numbers, using '.' (dot) as the decimal separator. Please note that most currencies only accept up to 2 decimal places.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
-<li><strong>url</strong>: URL of the image</li>
-<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+<li><strong>subtotal</strong>: Optional. The sub-total of the order.</li>
+<li><strong>shipping_cost</strong>: Optional. The shipping cost of the order.</li>
+<li><strong>total_tax</strong>: Optional. The tax of the order.</li>
+<li><strong>total_cost</strong>: The total cost of the order, including sub-total, shipping, and tax.</li>
 </ul>
 <hr />
-<h3 id="send_file">send_file</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_file</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<p><span style="float:right;"><a href="https://github.com/pasmod/fbotics/blob/master/fbotics/models/payloads/receipt_template.py#L54">[source]</a></span></p>
+<h3 id="adjustment">Adjustment</h3>
+<div class="codehilite"><pre><span></span><span class="n">fbotics</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">payloads</span><span class="o">.</span><span class="n">receipt_template</span><span class="o">.</span><span class="n">Adjustment</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Sends a file to the recipient.</p>
+<p>Describes payment adjustments, such as discounts.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
-<li><strong>url</strong>: URL of the file</li>
-<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
-</ul>
-<hr />
-<h3 id="send_generic_template">send_generic_template</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_generic_template</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Sends a generic template to the recipient.</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: optional. user_ref from the checkbox plugin</li>
-<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
-<li><strong>elements</strong>: An array of element objects that describe instances of the generic template to be sent. Specifying multiple elements will send a horizontally scrollable carousel of templates. A maximum of 10 elements is supported.</li>
-<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
-</ul>
-<hr />
-<h3 id="send_quick_replies">send_quick_replies</h3>
-<div class="codehilite"><pre><span></span><span class="n">send_quick_replies</span><span class="p">(</span><span class="n">recipient_id</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">user_ref</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phone_number</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quick_replies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Sends quick replies to the recipient.</p>
-<p><strong>Arguments</strong></p>
-<ul>
-<li><strong>recipient_id</strong>: page specific id of the recipient</li>
-<li><strong>user_ref</strong>: Optional. user_ref from the checkbox plugin</li>
-<li><strong>phone_number</strong>: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.</li>
-<li><strong>text</strong>: must be UTF-8 and has a 2000 character limit.</li>
-<li><strong>quick_replies</strong>: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.</li>
+<li><strong>name</strong>: Required if the adjustments array is set. Name of the adjustment.</li>
+<li><strong>amount</strong>: Required if the adjustments array is set. The amount of the adjustment.</li>
 </ul>
                 
                   
@@ -724,7 +675,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../list_template/example/" title="Example" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -733,19 +684,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Example
               </span>
             </div>
           </a>
         
         
-          <a href="../../text/example/" title="Text Message" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../example/" title="Example" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Text Message
+                Example
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

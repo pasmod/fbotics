@@ -2,62 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://pasmod.github.io/fbotics/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/client/client/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/text/example/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/rich_media/example/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/quick_replies/quick_replies/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/quick_replies/example/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/buttons/buttons/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/button_template/examples/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/generic_template/generic_template/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/generic_template/example/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/list_template/list_template/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://pasmod.github.io/fbotics/list_template/example/</loc>
-     <lastmod>2019-03-18</lastmod>
+     <lastmod>2019-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/receipt_template/receipt_template/</loc>
+     <lastmod>2019-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pasmod.github.io/fbotics/receipt_template/example/</loc>
+     <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
