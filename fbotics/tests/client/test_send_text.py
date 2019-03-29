@@ -27,7 +27,7 @@ def test_exception_when_sending_text_message_to_invalid_recipient(client):
 
 
 def test_response_content_when_sending_text_message_to_valid_recipient(
-        client, recipient_id
+    client, recipient_id
 ):
     """
     GIVEN a client and a recipient id

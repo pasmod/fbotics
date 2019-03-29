@@ -7,6 +7,7 @@ from fbotics.models.message import Message
 from fbotics.models.payloads.button_template import ButtonTemplatePayload
 from fbotics.models.payloads.generic_template import GenericTemplatePayload
 from fbotics.models.payloads.list_template import ListTemplatePayload
+from fbotics.models.payloads.receipt_template import ReceiptTemplatePayload
 from fbotics.models.payloads.rich_media import RichMediaPayload
 from fbotics.models.recipient import Recipient
 
@@ -18,13 +19,13 @@ class Client(object):
         self.page_access_token = page_access_token
 
     def send_button_template(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            text=None,
-            quick_replies=None,
-            buttons=None,
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        text=None,
+        quick_replies=None,
+        buttons=None,
     ):
         """Sends a button template to the recipient.
 
@@ -47,12 +48,12 @@ class Client(object):
         return response
 
     def send_generic_template(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            elements=None,
-            quick_replies=None,
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        elements=None,
+        quick_replies=None,
     ):
         """Sends a generic template to the recipient.
 
@@ -75,13 +76,13 @@ class Client(object):
         return response
 
     def send_list_template(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            elements=None,
-            buttons=None,
-            quick_replies=None
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        elements=None,
+        buttons=None,
+        quick_replies=None,
     ):
         """Sends a list template to the recipient.
 
@@ -104,13 +105,67 @@ class Client(object):
         response = self._post(message, recipient_id, user_ref, phone_number)
         return response
 
+    def send_receipt_template(
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        recipient_name=None,
+        elements=None,
+        order_number=None,
+        currency=None,
+        payment_method=None,
+        timestamp=None,
+        address=None,
+        summary=None,
+        adjustments=None,
+        quick_replies=None,
+    ):
+        """Sends a receipt template to the recipient.
+
+        # Arguments
+            recipient_id: page specific id of the recipient
+            user_ref: optional. user_ref from the checkbox plugin
+            phone_number: Optional. Phone number of the recipient with the format +1(212)555-2368. Your bot must be approved for Customer Matching to send messages this way.
+            elements: Optional. Array of a maximum of 100 element objects that describe items in the order. Sort order of the elements is not guaranteed.
+            order_number: The order number. Must be unique.
+            currency: The currency of the payment.
+            payment_method: The payment method used. Providing enough information for the customer to decipher which payment method and account they used is recommended. This can be a custom string, such as, "Visa 1234".
+            timestamp: Optional. Timestamp of the order in seconds.
+            address: Optional. The shipping address of the order.
+            summary: The payment summary.
+            adjustments: Optional. An array of payment objects that describe payment adjustments, such as discounts.
+            quick_replies: An array of objects the describe the quick reply buttons to send. A maximum of 11 quick replies are supported.
+
+        """
+
+        receipt_template_payload = ReceiptTemplatePayload(
+            dict(
+                template_type="receipt",
+                recipient_name=recipient_name,
+                elements=elements,
+                order_number=order_number,
+                currency=currency,
+                payment_method=payment_method,
+                timestamp=timestamp,
+                address=address,
+                summary=summary,
+                adjustments=adjustments,
+            )
+        )
+        attachment = Attachment(dict(type="template", payload=receipt_template_payload))
+        message = Message({"quick_replies": quick_replies, "attachment": attachment})
+
+        response = self._post(message, recipient_id, user_ref, phone_number)
+        return response
+
     def send_quick_replies(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            text=None,
-            quick_replies=None,
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        text=None,
+        quick_replies=None,
     ):
         """Sends quick replies to the recipient.
 
@@ -147,12 +202,12 @@ class Client(object):
         return response
 
     def send_image(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            url=None,
-            quick_replies=None,
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        url=None,
+        quick_replies=None,
     ):
         """Sends an image to the recipient.
 
@@ -171,12 +226,12 @@ class Client(object):
         return response
 
     def send_audio(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            url=None,
-            quick_replies=None,
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        url=None,
+        quick_replies=None,
     ):
         """Sends an audio to the recipient.
 
@@ -195,12 +250,12 @@ class Client(object):
         return response
 
     def send_file(
-            self,
-            recipient_id=None,
-            user_ref=None,
-            phone_number=None,
-            url=None,
-            quick_replies=None,
+        self,
+        recipient_id=None,
+        user_ref=None,
+        phone_number=None,
+        url=None,
+        quick_replies=None,
     ):
         """Sends a file to the recipient.
 
@@ -241,8 +296,8 @@ class Client(object):
         response = requests.post(API_URL, params=params, json=request.to_primitive())
         json_response = response.json()
         if (
-                response.status_code == 400
-                and json_response.get("error", {}).get("type", "") == "OAuthException"
+            response.status_code == 400
+            and json_response.get("error", {}).get("type", "") == "OAuthException"
         ):
             raise OAuthException(json_response.get("error").get("message", ""))
         return response

@@ -53,6 +53,9 @@ def test_send_list_template_returns_200_status_code(client, recipient_id):
     )
 
     response = client.send_list_template(
-        recipient_id=recipient_id, quick_replies=[qr1, qr2], elements=[e1, e2], buttons=buttons
+        recipient_id=recipient_id,
+        quick_replies=[qr1, qr2],
+        elements=[e1, e2],
+        buttons=buttons,
     )
     assert response.status_code == 200

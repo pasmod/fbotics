@@ -25,3 +25,6 @@ nav:
 - List Template:
   - Template Payload: list_template/list_template.md
   - Example: list_template/example.md
+- Receipt Template:
+  - Template Payload: receipt_template/receipt_template.md
+  - Example: receipt_template/example.md

@@ -28,7 +28,9 @@ class ListTemplatePayload(Model):
     """
 
     template_type = StringType(required=False, default="list", choices=["list"])
-    top_element_style = StringType(required=False, default="compact", choices=["compact", "large"])
+    top_element_style = StringType(
+        required=False, default="compact", choices=["compact", "large"]
+    )
     elements = ListType(ModelType(Element), min_size=2, max_size=4)
     sharable = BooleanType(default=False)
     buttons = ListType(

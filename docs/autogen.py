@@ -19,16 +19,22 @@ EXCLUDE = {}
 
 PAGES = [
     {
-        "page": "list_template/list_template.md",
+        "page": "receipt_template/receipt_template.md",
         "classes": [
-            fbotics.models.payloads.list_template.ListTemplatePayload,
+            fbotics.models.payloads.receipt_template.ReceiptTemplatePayload,
+            fbotics.models.payloads.receipt_template.Element,
+            fbotics.models.payloads.receipt_template.Address,
+            fbotics.models.payloads.receipt_template.Summary,
+            fbotics.models.payloads.receipt_template.Adjustment,
         ],
     },
     {
+        "page": "list_template/list_template.md",
+        "classes": [fbotics.models.payloads.list_template.ListTemplatePayload],
+    },
+    {
         "page": "generic_template/generic_template.md",
-        "classes": [
-            fbotics.models.payloads.generic_template.GenericTemplatePayload,
-        ],
+        "classes": [fbotics.models.payloads.generic_template.GenericTemplatePayload],
     },
     {
         "page": "client/client.md",
