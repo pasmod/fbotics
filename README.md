@@ -28,6 +28,7 @@ FBotics currently supports sending following message types:
     - Button Template
     - Generic Template
     - List Template
+    - Receipt Template
 
 Read the documentation at [Fbotics.io](https://pasmod.github.io/fbotics/).
     
