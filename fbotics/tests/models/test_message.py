@@ -1,7 +1,7 @@
 import pytest
-from schematics.exceptions import DataError
 
 from fbotics.models.message import Message
+from schematics.exceptions import DataError
 
 
 def test_validation_when_text_of_message_is_too_long(client):

@@ -1,10 +1,9 @@
+from fbotics.models.message import Message
+from fbotics.models.recipient import Recipient
 from schematics.exceptions import ValidationError
 from schematics.models import Model
 from schematics.types import StringType
 from schematics.types.compound import ModelType
-
-from fbotics.models.message import Message
-from fbotics.models.recipient import Recipient
 
 
 class Request(Model):

@@ -1,4 +1,4 @@
-from fbotics.models.buttons import WebUrlButton, CallButton
+from fbotics.models.buttons import CallButton, WebUrlButton
 from fbotics.models.quick_reply import QuickReply
 
 

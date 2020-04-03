@@ -1,4 +1,4 @@
-from pytest_voluptuous import S, Partial
+from pytest_voluptuous import Partial, S
 
 
 def test_retrieve_supported_tags_response_status_code_is_200(client, recipient_id):

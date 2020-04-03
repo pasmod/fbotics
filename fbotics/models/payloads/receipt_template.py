@@ -1,11 +1,11 @@
 from schematics import Model
 from schematics.types import (
-    StringType,
+    BooleanType,
+    DecimalType,
+    IntType,
     ListType,
     ModelType,
-    BooleanType,
-    IntType,
-    DecimalType,
+    StringType,
 )
 
 

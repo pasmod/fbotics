@@ -1,12 +1,11 @@
-from schematics.models import Model
-from schematics.types import StringType
-from schematics.types.compound import PolyModelType
-
 from fbotics.models.payloads.button_template import ButtonTemplatePayload
 from fbotics.models.payloads.generic_template import GenericTemplatePayload
 from fbotics.models.payloads.list_template import ListTemplatePayload
 from fbotics.models.payloads.receipt_template import ReceiptTemplatePayload
 from fbotics.models.payloads.rich_media import RichMediaPayload
+from schematics.models import Model
+from schematics.types import StringType
+from schematics.types.compound import PolyModelType
 
 
 def payload_claim_function(field, data):

@@ -1,7 +1,6 @@
+from fbotics.models.buttons import CallButton, PostbackButton, WebUrlButton
 from schematics import Model
-from schematics.types import StringType, ListType, PolyModelType, BooleanType
-
-from fbotics.models.buttons import PostbackButton, WebUrlButton, CallButton
+from schematics.types import BooleanType, ListType, PolyModelType, StringType
 
 
 def button_claim_function(field, data):

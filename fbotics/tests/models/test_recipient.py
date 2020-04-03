@@ -1,7 +1,7 @@
 import pytest
-from schematics.exceptions import DataError
 
 from fbotics.models.recipient import Recipient
+from schematics.exceptions import DataError
 
 
 def test_validation_when_id_and_phone_number_are_both_set(client):

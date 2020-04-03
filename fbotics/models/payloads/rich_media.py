@@ -1,5 +1,5 @@
 from schematics import Model
-from schematics.types import StringType, BooleanType
+from schematics.types import BooleanType, StringType
 
 
 class RichMediaPayload(Model):

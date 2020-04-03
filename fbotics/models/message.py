@@ -1,11 +1,9 @@
-from schematics.exceptions import ValidationError
-from schematics.models import Model
-from schematics.types import ListType
-from schematics.types import StringType
-from schematics.types.compound import ModelType
-
 from fbotics.models.attachment import Attachment
 from fbotics.models.quick_reply import QuickReply
+from schematics.exceptions import ValidationError
+from schematics.models import Model
+from schematics.types import ListType, StringType
+from schematics.types.compound import ModelType
 
 
 class Message(Model):
